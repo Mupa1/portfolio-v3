@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { notFound } from "next/navigation";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
+
+import ThemeProvider from "./context/Theme";
+
+import { routing } from "@/i18n/routing";
 
 import "./globals.css";
-import ThemeProvider from "@/context/Theme";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -21,13 +27,24 @@ export const metadata: Metadata = {
     "Frontend Developer, Product Designer, UI/UX Designer, React, Node, Typescript, Javascript, Next.js, TailwindCSS, MaterialUI, PostgreSQL, MongoDB, AWS, CI/CD, Git, Github, Gitlab, Bitbucket, REST, GraphQL, APIs, Microservices, Serverless, PWA, SPA, SSR, SSG, SEO, Accessibility, Performance, Security, Testing, Automation, Analytics, Agile, Scrum, Kanban, DevOps",
 };
 
-export default function RootLayout({
+export default async function LocaleLayout({
   children,
+  params: { locale },
 }: Readonly<{
   children: React.ReactNode;
+  params: { locale: string };
 }>) {
+  // Ensure that the incoming `locale` is valid
+  if (!routing.locales.includes(locale as "de" | "en")) {
+    notFound();
+  }
+
+  // Providing all messages to the client
+  // side is the easiest way to get started
+  const messages = await getMessages();
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -37,7 +54,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <NextIntlClientProvider messages={messages}>
+            {children}
+          </NextIntlClientProvider>
         </ThemeProvider>
       </body>
     </html>

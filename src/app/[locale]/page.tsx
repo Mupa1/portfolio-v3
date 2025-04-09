@@ -1,27 +1,16 @@
-import { useTranslations } from "next-intl";
+import Hero from "@/components/hero";
 
 export default function HomePage() {
-  const t = useTranslations("HomePage");
-
   return (
-    <div className="body-padding-x">
-      <div id="home" className="h-screen">
-        <h1>{t("welcome")}</h1>
-        Hero
-      </div>
-      <div id="about" className="h-screen">
+    <div className="body-padding-x h-screen snap-y snap-mandatory overflow-y-scroll">
+      <Hero />
+      <div id="about" className="h-screen snap-center snap-always">
         About
       </div>
-      <div id="skills" className="h-screen">
-        Skills
-      </div>
-      <div id="projects" className="h-screen">
+      <div id="projects" className="h-screen snap-center snap-always">
         Projects
       </div>
-      <div id="experience" className="h-screen">
-        Experience
-      </div>
-      <div id="contact" className="h-screen">
+      <div id="contact" className="h-screen snap-center snap-always">
         Contact
       </div>
     </div>

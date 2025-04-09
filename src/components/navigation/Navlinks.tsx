@@ -61,7 +61,7 @@ const Navlinks = ({
             origin-left scale-x-0 bg-current
             transition-transform duration-300 ease-in-out
             group-hover:scale-x-100
-            ${activeSection === section ? "scale-x-100 text-primary" : ""}
+            ${activeSection === section ? "scale-x-100 text-accent" : ""}
           `}
         />
       </span>

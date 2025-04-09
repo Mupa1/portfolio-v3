@@ -2,12 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  body {
+    @apply font-sans bg-white dark:bg-black;
+  }
 }
 
-@layer base {
-  :root {
-    --radius: 0.5rem;
+@layer utilities {
+  .body-padding-x {
+    @apply px-4 md:px-12;
+  }
+
+  .max-width {
+    @apply max-w-[1440px] mx-auto;
+  }
+
+  .flex-between {
+    @apply flex justify-between items-center;
   }
 }

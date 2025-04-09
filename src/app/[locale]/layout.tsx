@@ -4,8 +4,8 @@ import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 
-import ThemeProvider from "./context/Theme";
-
+import ThemeProvider from "@/app/[locale]/context/Theme";
+import Navbar from "@/components/navigation";
 import { routing } from "@/i18n/routing";
 
 import "./globals.css";
@@ -24,40 +24,43 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Mupa M'mbetsa Nzaphila | Portfolio",
   description:
-    "Frontend Developer, Product Designer, UI/UX Designer, React, Node, Typescript, Javascript, Next.js, TailwindCSS, MaterialUI, PostgreSQL, MongoDB, AWS, CI/CD, Git, Github, Gitlab, Bitbucket, REST, GraphQL, APIs, Microservices, Serverless, PWA, SPA, SSR, SSG, SEO, Accessibility, Performance, Security, Testing, Automation, Analytics, Agile, Scrum, Kanban, DevOps",
+    "Frontend Developer, Product Designer, UI/UX Designer, React, Node, Typescript, Javascript, Next.js, TailwindCSS, MaterialUI, SQL, NoSQL, AWS, CI/CD, Git, Github, Gitlab, Bitbucket, RESTful APIs, GraphQL, Serverless, PWA, SPA, SSR, SSG, SEO, Accessibility, Performance, Security, Testing, Automation, Analytics, Agile, Scrum, Kanban, DevOps",
 };
 
-export default async function LocaleLayout({
-  children,
-  params: { locale },
-}: Readonly<{
+interface LayoutProps {
   children: React.ReactNode;
-  params: { locale: string };
-}>) {
-  // Ensure that the incoming `locale` is valid
+  params: Promise<{
+    locale: string;
+  }>;
+}
+
+export default async function LocaleLayout({ children, params }: LayoutProps) {
+  const { locale } = await params;
+
   if (!routing.locales.includes(locale as "de" | "en")) {
     notFound();
   }
 
-  // Providing all messages to the client
-  // side is the easiest way to get started
-  const messages = await getMessages();
+  const messages = await getMessages({ locale });
 
   return (
     <html lang={locale} suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <NextIntlClientProvider messages={messages}>
-            {children}
-          </NextIntlClientProvider>
-        </ThemeProvider>
+        <main>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <NextIntlClientProvider messages={messages}>
+              <Navbar />
+              {children}
+            </NextIntlClientProvider>
+          </ThemeProvider>
+        </main>
       </body>
     </html>
   );

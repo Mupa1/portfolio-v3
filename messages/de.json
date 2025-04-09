@@ -1,5 +1,14 @@
 {
   "HomePage": {
     "welcome": "Willkommen in meinem Portfolio"
+  },
+  "Navigation": {
+    "en": "EN",
+    "de": "DE",
+    "projects": "PROJEKTE",
+    "contact": "KONTAKT",
+    "home": "STARTSEITE",
+    "about": "ÜBER MICH",
+    "navigation": "Navigation"
   }
 }

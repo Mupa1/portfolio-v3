@@ -9,7 +9,7 @@ import Theme from "./Theme";
 
 const Navbar = () => {
   return (
-    <nav className="body-padding-x sticky top-0 font-mono ">
+    <nav className="body-padding-x fixed top-0 w-full bg-white font-mono dark:bg-black">
       <div className="flex-between h-20">
         <Link href="/" className="flex items-center gap-1">
           <Image

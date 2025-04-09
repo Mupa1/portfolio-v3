@@ -1,6 +1,11 @@
 {
   "HomePage": {
-    "welcome": "Welcome to my portfolio"
+    "titleDev": "FRONTEND ENGINEER",
+    "titleUx": "UI/UX DESIGNER",
+    "frontend": "FRONTEND",
+    "engineer": "DEVELOPER",
+    "ux": "UI/UX",
+    "designer": "DESIGNER"
   },
   "Navigation": {
     "en": "EN",

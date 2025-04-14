@@ -1,4 +1,5 @@
 "use client";
+
 import { useTranslations } from "next-intl";
 import React, { useEffect, useState } from "react";
 
@@ -14,7 +15,7 @@ const Navlinks = ({
   isMobileNav?: boolean;
   className?: string;
 }) => {
-  const t = useTranslations("Navigation");
+  const t = useTranslations();
   const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {

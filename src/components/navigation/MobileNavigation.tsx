@@ -13,7 +13,7 @@ import Navlinks from "./Navlinks";
 import { Button } from "../ui/button";
 
 const MobileNavigation = () => {
-  const t = useTranslations("Navigation");
+  const t = useTranslations();
 
   return (
     <Sheet>

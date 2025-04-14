@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply font-sans bg-white dark:bg-black;
+    @apply font-sans bg-white dark:bg-black text-neutral-600 dark:text-white;
   }
 
   h1 {
@@ -12,7 +12,11 @@
   }
 
   h2 {
-    @apply text-[2.5rem] sm:text-[5rem] xl:text-[5.7rem] 2xl:text-[6rem] font-bold;
+    @apply font-mono text-[2.5rem] sm:text-[5rem] xl:text-[5.7rem] 2xl:text-[6rem] font-bold;
+  }
+
+  h3 {
+    @apply text-[2rem] sm:text-[3rem] xl:text-[3.5rem] 2xl:text-[4rem] font-bold;
   }
 }
 
@@ -31,5 +35,9 @@
 
   .flex-center {
     @apply flex justify-center items-center;
+  }
+
+  .center-snap {
+    @apply h-screen snap-center snap-always;
   }
 }

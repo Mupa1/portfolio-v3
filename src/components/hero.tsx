@@ -2,7 +2,8 @@ import { useTranslations } from "next-intl";
 import React from "react";
 
 const Hero = () => {
-  const t = useTranslations("HomePage");
+  const t = useTranslations();
+  
   return (
     <div
       id="home"
@@ -11,12 +12,12 @@ const Hero = () => {
       <h1 className="mb-10 w-full text-left">MUPA NZAPHILA</h1>
       <h2 className="xl:flex-between w-full flex-col xl:flex-row">
         <div>
-          <div>{t("frontend")}</div>
-          <div>{t("engineer")}</div>
+          <div>{t("Hero.frontend")}</div>
+          <div>{t("Hero.engineer")}</div>
         </div>
         <div className="mt-8 text-right xl:mt-0">
-          <div>{t("ux")}</div>
-          <div>{t("designer")}</div>
+          <div>{t("Hero.ux")}</div>
+          <div>{t("Hero.designer")}</div>
         </div>
       </h2>
     </div>

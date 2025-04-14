@@ -9,7 +9,7 @@ const Language = () => {
   const router = useRouter();
   const pathname = usePathname();
   const currentLocale = useLocale();
-  const t = useTranslations("Navigation");
+  const t = useTranslations();
 
   const switchLocale = (locale: string) => {
     const newPathname = pathname.replace(`/${currentLocale}`, "");

@@ -17,9 +17,12 @@ const MobileNavigation = () => {
 
   return (
     <Sheet>
-      <div className="block sm:hidden">
+      <div>
         <SheetTrigger asChild>
-          <Button variant="ghost" className="flex-between relative">
+          <Button
+            variant="ghost"
+            className="flex-between relative text-neutral-900"
+          >
             <Image
               src="/icons/hamburger-dark.svg"
               width={20}

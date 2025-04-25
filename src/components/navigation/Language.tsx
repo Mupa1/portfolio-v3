@@ -20,6 +20,7 @@ const Language = () => {
   return (
     <Button
       variant="ghost"
+      className="text-neutral-900"
       onClick={() => switchLocale(currentLocale === "en" ? "de" : "en")}
       aria-label={
         currentLocale === "en" ? "Switch to German" : "Switch to English"

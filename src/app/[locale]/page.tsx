@@ -1,5 +1,7 @@
-import About from "@/components/about";
-import Hero from "@/components/hero";
+import dynamic from "next/dynamic";
+
+const Hero = dynamic(() => import("@/components/sections/hero"));
+const About = dynamic(() => import("@/components/sections/about"));
 
 export default function HomePage() {
   return (

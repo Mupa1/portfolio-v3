@@ -8,19 +8,12 @@
   "navigation": "Navigation",
   "Hero": {
     "frontend": "FRONTEND",
-    "engineer": "DEVELOPER",
-    "ux": "UI/UX",
-    "designer": "DESIGNER"
+    "engineer": "ENGINEER",
+    "description": "I like to build scalable frontend products with great user experiences."
   },
-  "About" : {
+  "About": {
     "title": "ABOUT ME",
     "subtitle": "Frontend-Entwicklerin",
-    "description": [
-      "Hi, I’m Mupa Nzaphila — a frontend engineer with a love for clean, accessible, and performant web interfaces.",
-      "Over the past three years, I’ve had the chance to work with fast-paced teams at HEYCAR and ACCURE Battery Intelligence, where I built finance tools used by thousands, optimized dashboards for large datasets, and tackled performance challenges head-on.",
-      "My tech toolkit includes React, Next.js, TypeScript, and TailwindCSS, and I’m always on the lookout for ways to bring designs to life while keeping things scalable and intuitive. Whether it’s collaborating across teams, debugging tricky issues, or turning a complex UI into something delightful and seamless — that’s where I thrive.",
-      "Beyond the code, I’m passionate about user experience, data-driven design, and continuous learning. I believe great software doesn’t just work — it feels right. Let’s build something people enjoy using."
-    ]
+    "description": "I’m Mupa Nzaphila — a frontend engineer with about 3 years of experience building clean, accessible, and high-performance web interfaces. At HEYCAR and ACCURE Battery Intelligence, I developed finance tools used by thousands, optimized dashboards for large datasets, and solved real-world performance challenges. I work with React, Next.js, TypeScript, and TailwindCSS, and love turning complex ideas into intuitive, scalable user experiences. I’m passionate about great UX, thoughtful design, and building products that not only work — but feel great to use."
   }
 }
-

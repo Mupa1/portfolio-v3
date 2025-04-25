@@ -49,9 +49,8 @@ const Navlinks = ({
       variant="link"
       onClick={() => scrollToSection(section)}
       className={`
-        group relative inline-flex h-auto px-0 py-1 tracking-wider
+        group relative inline-flex h-auto tracking-wider text-neutral-900
         transition-colors
-        ${activeSection === section ? "font-semibold" : ""}
       `}
     >
       <span className="relative">
@@ -62,7 +61,7 @@ const Navlinks = ({
             origin-left scale-x-0 bg-current
             transition-transform duration-300 ease-in-out
             group-hover:scale-x-100
-            ${activeSection === section ? "scale-x-100 text-accent" : ""}
+            ${activeSection === section ? "scale-x-100 text-neutral-600 dark:text-neutral-100" : ""}
           `}
         />
       </span>

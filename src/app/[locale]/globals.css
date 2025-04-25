@@ -4,19 +4,23 @@
 
 @layer base {
   body {
-    @apply font-sans bg-white dark:bg-black text-neutral-600 dark:text-white;
-  }
-
-  h1 {
-    @apply font-mono text-xl font-bold;
+    @apply font-sans bg-neutral-100 dark:bg-black text-neutral-600 dark:text-neutral-100 md:text-base lg:text-lg leading-6;
   }
 
   h2 {
-    @apply font-mono text-[2.5rem] sm:text-[5rem] xl:text-[5.7rem] 2xl:text-[6rem] font-bold;
+    @apply text-4xl leading-4 sm:text-5xl md:text-7xl lg:text-9xl font-semibold;
   }
 
   h3 {
-    @apply text-[2rem] sm:text-[3rem] xl:text-[3.5rem] 2xl:text-[4rem] font-bold;
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold pb-2;
+  }
+
+  p {
+    @apply tracking-wider text-[12px] sm:text-[14px] md:text-[16px];
+  }
+
+  button {
+    @apply text-neutral-900 dark:text-neutral-100;
   }
 }
 
@@ -26,7 +30,7 @@
   }
 
   .max-width {
-    @apply max-w-[1440px] mx-auto;
+    @apply max-w-full mx-auto;
   }
 
   .flex-between {

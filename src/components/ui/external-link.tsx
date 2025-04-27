@@ -1,15 +1,14 @@
-import { PropsWithChildren } from "react";
-
-type PageLayoutType = {
+interface ExternalLinkProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string;
-};
+  children: React.ReactNode;
+  className?: string;
+  showIcon?: boolean;
+}
 
-const ExternalLink: React.FC<PropsWithChildren<PageLayoutType>> = ({
-  children,
-  href,
-}) => {
+const ExternalLink = ({ href, children, ...props }: ExternalLinkProps) => {
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer">
+    <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
       {children}
     </a>
   );

@@ -4,11 +4,11 @@
 
 @layer base {
   body {
-    @apply font-sans bg-neutral-100 dark:bg-black text-neutral-600 dark:text-neutral-100 md:text-base lg:text-lg leading-6;
+    @apply font-sans bg-neutral-100 dark:bg-neutral-950 text-neutral-600 dark:text-neutral-100 md:text-base lg:text-lg leading-6;
   }
 
   h2 {
-    @apply text-4xl leading-4 sm:text-5xl md:text-7xl lg:text-9xl font-semibold;
+    @apply text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-semibold;
   }
 
   h3 {

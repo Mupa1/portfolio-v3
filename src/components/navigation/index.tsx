@@ -2,12 +2,12 @@ import Link from "next/link";
 import React from "react";
 
 import Language from "./Language";
-import MobileNavigation from "./MobileNavigation";
+import Menu from "./Menu";
 import Theme from "./Theme";
 
 const Navbar = () => {
   return (
-    <nav className="body-padding-x fixed top-0 w-full bg-neutral-100 dark:bg-black">
+    <nav className="body-padding-x fixed top-0 z-20 w-full">
       <div className="flex-between max-width h-20">
         <Link href="/" className="flex flex-col gap-1 text-base leading-4">
           <h1>
@@ -15,10 +15,10 @@ const Navbar = () => {
             <div>Nzaphila</div>
           </h1>
         </Link>
-        <div className="flex-between gap-0 sm:gap-3">
+        <div className="flex-between gap-4 md:gap-8">
           <Language />
           <Theme />
-          <MobileNavigation />
+          <Menu />
         </div>
       </div>
     </nav>

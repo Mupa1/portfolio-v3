@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { MenuIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import {
@@ -11,8 +11,9 @@ import {
 
 import Navlinks from "./Navlinks";
 import { Button } from "../ui/button";
+import SocialIcons from "../ui/social-icons";
 
-const MobileNavigation = () => {
+const Menu = () => {
   const t = useTranslations();
 
   return (
@@ -21,22 +22,9 @@ const MobileNavigation = () => {
         <SheetTrigger asChild>
           <Button
             variant="ghost"
-            className="flex-between relative text-neutral-900"
+            className="flex-between relative text-neutral-900 hover:animate-wiggle"
           >
-            <Image
-              src="/icons/hamburger-dark.svg"
-              width={20}
-              height={20}
-              alt="Menu"
-              className="block dark:hidden"
-            />
-            <Image
-              src="/icons/hamburger-light.svg"
-              width={20}
-              height={20}
-              alt="Menu"
-              className="hidden dark:block"
-            />
+            <MenuIcon className="size-7 text-neutral-600 transition-colors dark:text-neutral-100" />
           </Button>
         </SheetTrigger>
       </div>
@@ -44,8 +32,9 @@ const MobileNavigation = () => {
         <SheetTitle className="hidden">{t("navigation")}</SheetTitle>
         <div className="flex h-[calc(100vh-80px)] flex-col justify-between overflow-y-auto">
           <SheetClose asChild>
-            <section className="h-full gap-6">
+            <section className="size-full">
               <Navlinks isMobileNav className="flex flex-col" />
+              <SocialIcons className="flex-center gap-8 pt-20 text-2xl text-neutral-900/70 dark:text-neutral-100/70 sm:text-3xl md:text-4xl lg:text-5xl" />
             </section>
           </SheetClose>
         </div>
@@ -54,4 +43,4 @@ const MobileNavigation = () => {
   );
 };
 
-export default MobileNavigation;
+export default Menu;

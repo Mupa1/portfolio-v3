@@ -56,7 +56,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
         >
           <NextIntlClientProvider messages={messages}>
             <Navbar />
-            <SocialIcons />
+            <SocialIcons className="fixed bottom-5 left-[-7] z-10 hidden h-screen w-14 flex-col items-center justify-end md:left-7 md:flex md:gap-y-8" />
             <main>{children}</main>
           </NextIntlClientProvider>
         </ThemeProvider>

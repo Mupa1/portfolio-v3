@@ -1,6 +1,6 @@
 {
-  "en": "EN",
-  "de": "DE",
+  "language": "EN",
+  "switchLanguage": "Wechseln Sie zur deutschen Sprache",
   "projects": "PROJEKTE",
   "contact": "KONTAKT",
   "home": "STARTSEITE",
@@ -9,17 +9,11 @@
   "Hero": {
     "frontend": "FRONTEND-",
     "engineer": "ENTWICKLERIN",
-    "ux": "UI/UX",
-    "designer": "DESIGNERIN"
+    "description": "Ich baue gerne skalierbare Frontend-Produkte mit großartigem Benutzererlebnis."
   },
-  "About" : {
+  "About": {
     "title": "ÜBER MICH",
     "subtitle": "Frontend-Entwicklerin",
-    "description": [
-      "Hallo, ich bin Mupa Nzaphila — eine Frontend-Entwicklerin mit einer Leidenschaft für saubere, zugängliche und leistungsstarke Webschnittstellen.",
-      "In den letzten drei Jahren hatte ich die Gelegenheit, mit dynamischen Teams bei HEYCAR und ACCURE Battery Intelligence zu arbeiten, wo ich Finanztools entwickelt habe, die von Tausenden genutzt werden, Dashboards für große Datensätze optimiert habe und mich Herausforderungen in Bezug auf Leistung gestellt habe.",
-      "Mein technisches Toolkit umfasst React, Next.js, TypeScript und TailwindCSS, und ich bin immer auf der Suche nach Möglichkeiten, Designs zum Leben zu erwecken und dabei alles skalierbar und intuitiv zu halten. Egal ob es darum geht, teamübergreifend zusammenzuarbeiten, knifflige Probleme zu debuggen oder eine komplexe Benutzeroberfläche in etwas Angenehmes und Nahtloses zu verwandeln — da blühe ich auf.",
-      "Über den Code hinaus bin ich leidenschaftlich an Benutzererfahrung, datengestütztem Design und kontinuierlichem Lernen interessiert. Ich glaube, dass großartige Software nicht nur funktioniert — sie fühlt sich richtig an. Lass uns etwas bauen, das den Menschen Freude bereitet."
-    ]
+    "description": "Ich bin Mupa Nzaphila - eine Frontend-Entwicklerin mit etwa 3 Jahren Erfahrung in der Erstellung von sauberen, barrierefreien und leistungsstarken Weboberflächen. Bei HEYCAR und ACCURE Battery Intelligence habe ich Finanztools entwickelt, die von Tausenden genutzt werden, Dashboards für große Datensätze optimiert und reale Leistungsherausforderungen gelöst. Ich arbeite hauptsächlich mit React und Next.js und liebe es, komplexe Ideen in intuitive, skalierbare Benutzererlebnisse umzuwandeln. Ich bin leidenschaftlich an großartiger UX, durchdachtem Design und dem Aufbau von Produkten interessiert, die nicht nur funktionieren - sondern sich auch großartig anfühlen."
   }
 }

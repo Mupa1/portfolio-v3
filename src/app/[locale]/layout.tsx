@@ -6,6 +6,7 @@ import { getMessages } from "next-intl/server";
 
 import ThemeProvider from "@/app/[locale]/context/Theme";
 import Navbar from "@/components/navigation";
+import SocialIcons from "@/components/ui/social-icons";
 import { routing } from "@/i18n/routing";
 
 import "./globals.css";
@@ -23,8 +24,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Mupa M'mbetsa Nzaphila | Portfolio",
-  description:
-    "Frontend Developer, Product Designer, UI/UX Designer, React, Node, Typescript, Javascript, Next.js, TailwindCSS, MaterialUI, SQL, NoSQL, AWS, CI/CD, Git, Github, Gitlab, Bitbucket, RESTful APIs, GraphQL, Serverless, PWA, SPA, SSR, SSG, SEO, Accessibility, Performance, Security, Testing, Automation, Analytics, Agile, Scrum, Kanban, DevOps",
+  description: "Frontend Developer and Designer Portfolio",
 };
 
 interface LayoutProps {
@@ -48,19 +48,18 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <main>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <NextIntlClientProvider messages={messages}>
-              <Navbar />
-              {children}
-            </NextIntlClientProvider>
-          </ThemeProvider>
-        </main>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <NextIntlClientProvider messages={messages}>
+            <Navbar />
+            <SocialIcons className="fixed bottom-5 left-[-7] z-10 hidden h-screen w-14 flex-col items-center justify-end md:left-7 md:flex md:gap-y-8" />
+            <main>{children}</main>
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

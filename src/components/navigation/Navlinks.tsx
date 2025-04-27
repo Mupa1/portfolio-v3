@@ -49,23 +49,12 @@ const Navlinks = ({
       variant="link"
       onClick={() => scrollToSection(section)}
       className={`
-        group relative inline-flex h-auto px-0 py-1 tracking-wider
-        transition-colors
-        ${activeSection === section ? "font-semibold" : ""}
+        group relative inline-flex h-auto text-2xl font-semibold
+        tracking-wider text-neutral-900/70 transition-colors hover:animate-wiggle dark:text-neutral-100/70 sm:text-3xl md:text-4xl lg:text-5xl
+        ${activeSection === section ? "font-bold" : ""}
       `}
     >
-      <span className="relative">
-        {t(section)}
-        <span
-          className={`
-            absolute bottom-[-5px] left-0 h-[2px] w-full
-            origin-left scale-x-0 bg-current
-            transition-transform duration-300 ease-in-out
-            group-hover:scale-x-100
-            ${activeSection === section ? "scale-x-100 text-accent" : ""}
-          `}
-        />
-      </span>
+      {t(section)}
     </Button>
   );
 

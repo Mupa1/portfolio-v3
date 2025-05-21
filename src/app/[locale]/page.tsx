@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 const Hero = dynamic(() => import("@/components/sections/hero"));
 const About = dynamic(() => import("@/components/sections/about"));
 const Projects = dynamic(() => import("@/components/sections/projects"));
+const Contact = dynamic(() => import("@/components/sections/contact"));
 
 const HomePage = () => {
   return (
@@ -10,9 +11,7 @@ const HomePage = () => {
       <Hero />
       <About />
       <Projects />
-      <div id="contact" className="center-snap">
-        Contact
-      </div>
+      <Contact />
     </div>
   );
 };

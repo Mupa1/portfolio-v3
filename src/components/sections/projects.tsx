@@ -36,7 +36,7 @@ const Projects = ({ itemsPerPage = 8 }: ProjectsProps) => {
       id="projects"
       className="center-snap m-auto max-w-7xl py-12 sm:py-20"
     >
-      <div className="section-padding-x mx-auto max-w-7xl px-6">
+      <div className="section-padding-x mx-auto mt-8 max-w-7xl px-6">
         <motion.h3
           initial={{ opacity: 0, x: -25 }}
           whileInView={{ opacity: 1, x: 0 }}

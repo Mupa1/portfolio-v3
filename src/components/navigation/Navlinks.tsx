@@ -50,7 +50,7 @@ const Navlinks = ({
       onClick={() => scrollToSection(section)}
       className={`
         group relative inline-flex h-auto text-2xl font-semibold
-        tracking-wider text-neutral-900/70 transition-colors hover:animate-wiggle dark:text-neutral-100/70 sm:text-3xl md:text-4xl lg:text-5xl
+        tracking-wider text-neutral-600 transition-colors hover:animate-wiggle hover:text-neutral-500 dark:text-neutral-400 dark:hover:text-neutral-300 sm:text-3xl md:text-4xl lg:text-5xl
         ${activeSection === section ? "font-bold" : ""}
       `}
     >

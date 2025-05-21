@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply font-sans bg-neutral-100 dark:bg-neutral-950 text-neutral-600 dark:text-neutral-100 md:text-base lg:text-lg leading-6;
+    @apply font-sans bg-neutral-100 dark:bg-neutral-950 text-neutral-600 dark:text-neutral-400 md:text-base lg:text-lg leading-6;
   }
 
   h2 {
@@ -24,11 +24,11 @@
   }
 
   button {
-    @apply text-neutral-900 dark:text-neutral-100;
+    @apply text-neutral-900 dark:text-neutral-400;
   }
 
   a {
-    @apply hover:text-neutral-500 dark:hover:text-neutral-50;
+    @apply hover:text-neutral-500 dark:hover:text-neutral-300;
   }
 }
 
@@ -38,10 +38,15 @@
   }
 
   .section-padding-x {
-    @apply px-6 lg:px-8;
+    @apply px-0.5 sm:px-6 lg:px-8;
   }
+
   .max-width {
     @apply max-w-full mx-auto;
+  }
+
+  .hover-color {
+    @apply hover:text-neutral-500 dark:hover:text-neutral-300;
   }
 
   .flex-between {

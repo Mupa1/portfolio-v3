@@ -22,9 +22,9 @@ const Menu = () => {
         <SheetTrigger asChild>
           <Button
             variant="ghost"
-            className="flex-between relative text-neutral-900 hover:animate-wiggle"
+            className="flex-between relative text-neutral-600 hover:animate-wiggle hover:text-neutral-500 dark:text-neutral-400 dark:hover:text-neutral-300"
           >
-            <MenuIcon className="size-7 text-neutral-600 transition-colors dark:text-neutral-100" />
+            <MenuIcon className="size-7 text-neutral-600 transition-colors hover:text-neutral-500 dark:text-neutral-400 dark:hover:text-neutral-300" />
           </Button>
         </SheetTrigger>
       </div>

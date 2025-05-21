@@ -17,8 +17,6 @@
     "description": "Ich bin Mupa Nzaphila - eine Frontend-Entwicklerin mit etwa 3 Jahren Erfahrung in der Erstellung von sauberen, barrierefreien und leistungsstarken Weboberflächen. Bei HEYCAR und ACCURE Battery Intelligence habe ich Finanztools entwickelt, die von Tausenden genutzt werden, Dashboards für große Datensätze optimiert und reale Leistungsherausforderungen gelöst. Ich arbeite hauptsächlich mit React und Next.js und liebe es, komplexe Ideen in intuitive, skalierbare Benutzererlebnisse umzuwandeln. Ich bin leidenschaftlich an großartiger UX, durchdachtem Design und dem Aufbau von Produkten interessiert, die nicht nur funktionieren - sondern sich auch großartig anfühlen."
   },
   "Projects": {
-    "liveDemo": "Live Demo",
-    "sourceCode": "Quellcode",
     "loadMore": "Mehr laden",
     "loading": "Laden..."
   }

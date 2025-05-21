@@ -14,7 +14,8 @@ const config: Config = {
         mono: ["var(--font-geist-mono)"],
       },
       animation: {
-        wiggle: "wiggle 1s ease-in-out infinite",
+        wiggle: "wiggle 1s ease-in-out",
+        "wiggle-once": "wiggle 1s ease-in-out",
       },
       keyframes: {
         wiggle: {

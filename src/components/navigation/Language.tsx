@@ -20,7 +20,7 @@ const Language = () => {
   return (
     <Button
       variant="ghost"
-      className="text-neutral-900 hover:animate-wiggle"
+      className="hover-color hover:animate-wiggle"
       onClick={() => switchLocale(currentLocale === "en" ? "de" : "en")}
       aria-label={t("switchLanguage")}
     >

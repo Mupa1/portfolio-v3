@@ -9,12 +9,9 @@ const About = () => {
   const t = useTranslations();
 
   return (
-    <section
-      id="about"
-      className="flex-center min-h-screen w-full snap-center snap-always"
-    >
+    <section id="about" className="flex-center center-snap w-full">
       <div className="max-width md:pt-20">
-        <div className="mx-auto grid h-full max-w-6xl grid-cols-2 gap-2 md:gap-2">
+        <div className="section-padding-x mx-auto grid h-full max-w-7xl grid-cols-2 gap-2 md:gap-2">
           <motion.h3
             initial={{ opacity: 0, x: -25 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -23,13 +20,12 @@ const About = () => {
           >
             {t("about")}
           </motion.h3>
-
           <motion.div
             initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
             whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{
               type: "spring",
-              stiffness: 100,
+              stiffness: 30,
               damping: 10,
               delay: 0.3,
             }}
@@ -39,8 +35,8 @@ const About = () => {
               src="/images/photo.png"
               alt="Mupa Nzaphila's Portrait Photo"
               fill
-              sizes="(max-width: 768px) 100vw, 33vw"
-              className="object-contain object-right"
+              sizes="full-width"
+              className="rounded-md object-contain object-right"
               priority
             />
           </motion.div>

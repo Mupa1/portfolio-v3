@@ -1,4 +1,4 @@
-import { socialIcons } from "@/app/constants/social-icons";
+import { socialIcons } from "@/constants/social-icons";
 import { cn } from "@/lib/utils";
 
 import ExternalLink from "./external-link";

@@ -15,12 +15,20 @@
     @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold pb-2;
   }
 
+  h4 {
+    @apply text-xl font-semibold;
+  }
+
   p {
     @apply tracking-wider text-[12px] sm:text-[14px] md:text-[16px];
   }
 
   button {
     @apply text-neutral-900 dark:text-neutral-100;
+  }
+
+  a {
+    @apply hover:text-neutral-500 dark:hover:text-neutral-50;
   }
 }
 
@@ -29,6 +37,9 @@
     @apply px-4 md:px-12;
   }
 
+  .section-padding-x {
+    @apply px-6 lg:px-8;
+  }
   .max-width {
     @apply max-w-full mx-auto;
   }
@@ -42,6 +53,6 @@
   }
 
   .center-snap {
-    @apply h-screen snap-center snap-always;
+    @apply min-h-screen snap-center snap-always;
   }
 }

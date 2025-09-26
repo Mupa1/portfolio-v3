@@ -42,6 +42,7 @@ const Overlay = () => {
               height={36}
               alt="Site Logo"
               className="invert dark:invert-0"
+              style={{ width: "auto", height: "auto" }}
             />
           </div>
         </motion.div>

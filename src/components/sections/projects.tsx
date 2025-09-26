@@ -34,64 +34,48 @@ const Projects = ({ itemsPerPage = 8 }: ProjectsProps) => {
   return (
     <section
       id="projects"
-      className="center-snap m-auto max-w-7xl py-12 sm:py-20"
+      className="flex-center min-h-screen w-full snap-start snap-always py-12 sm:py-20"
     >
-      <div className="section-padding-x mx-auto mt-8 max-w-7xl px-6">
-        <motion.h3
-          initial={{ opacity: 0, x: -25 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: false }}
-          transition={{ duration: 0.9, delay: 0.2 }}
-        >
-          {t("projects")}
-        </motion.h3>
-        <div className="mt-8 grid grid-cols-1 gap-4 sm:mt-12 sm:grid-cols-2 lg:grid-cols-3">
-          {displayedProjects.map((project) => (
-            <article
-              key={project.id}
-              className="group relative aspect-square overflow-hidden rounded-3xl bg-white shadow-lg dark:bg-neutral-900"
-            >
-              <div className="absolute inset-0">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-contain object-top transition-transform duration-500 group-hover:scale-110 group-hover:grayscale"
-                  quality={90}
-                />
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent from-0% via-neutral-50 via-40% to-neutral-50 to-100% dark:via-neutral-900 dark:to-neutral-900" />
-              </div>
+      <div className="w-full max-w-7xl">
+        <div className="section-padding-x mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="mb-8 text-center"
+          >
+            <h3>{t("projects")}</h3>
+          </motion.div>
 
-              <div className="absolute inset-x-0 bottom-0 p-3 sm:p-6">
-                <div className="flex min-h-48 flex-col justify-between">
-                  <div>
-                    <h4 className="text-lg sm:text-xl">{project.title}</h4>
-                    <p className="mt-2 text-xs text-neutral-700 dark:text-neutral-200 sm:text-sm">
-                      {project.description[locale]}
-                    </p>
-                    {project.techStack && (
-                      <div className="mt-3 flex flex-wrap gap-1.5 sm:gap-2">
-                        {project.techStack.map((tech) => (
-                          <span
-                            key={tech}
-                            className="rounded-full bg-neutral-900/10 px-2 py-0.5 text-[10px] text-neutral-900 backdrop-blur-sm dark:bg-white/10 dark:text-white sm:text-xs"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-                  </div>
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+            {displayedProjects.map((project, index) => (
+              <motion.article
+                key={project.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
+                className="group relative overflow-hidden rounded-md bg-white shadow-xl transition-all duration-300 hover:shadow-2xl dark:bg-neutral-900"
+              >
+                <div className="relative h-64 overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
 
-                  <div className="mt-3 flex flex-wrap justify-end gap-3 sm:gap-4">
+                  <div className="absolute right-4 top-4 flex gap-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                     {project.link && (
                       <a
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1.5 text-xs sm:text-sm"
+                        className="flex size-10 items-center justify-center rounded-full bg-white/90 text-neutral-900 shadow-lg transition-colors hover:bg-white"
                       >
-                        <FiExternalLink className="size-3.5 sm:size-4" />
+                        <FiExternalLink className="size-4" />
                       </a>
                     )}
                     {project.github && (
@@ -99,28 +83,62 @@ const Projects = ({ itemsPerPage = 8 }: ProjectsProps) => {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1.5 text-xs sm:text-sm"
+                        className="flex size-10 items-center justify-center rounded-full bg-white/90 text-neutral-900 shadow-lg transition-colors hover:bg-white"
                       >
-                        <FiGithub className="size-3.5 sm:size-4" />
+                        <FiGithub className="size-4" />
                       </a>
                     )}
                   </div>
                 </div>
-              </div>
-            </article>
-          ))}
-        </div>
-        {hasMore && (
-          <div className="mt-12 flex justify-center">
-            <button
-              onClick={loadMore}
-              disabled={isLoading}
-              className="rounded-full bg-neutral-700 px-6 py-3 text-sm font-semibold text-neutral-100 shadow-sm hover:bg-neutral-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-800 dark:bg-neutral-100 dark:text-neutral-700 dark:hover:bg-neutral-100"
-            >
-              {isLoading ? t("Projects.loading") : t("Projects.loadMore")}
-            </button>
+
+                <div className="p-6">
+                  <h4 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100">
+                    {project.title}
+                  </h4>
+                  <p className="mt-3 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+                    {project.description[locale]}
+                  </p>
+
+                  {project.techStack && (
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {project.techStack.map((tech) => (
+                        <span
+                          key={tech}
+                          className="rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </motion.article>
+            ))}
           </div>
-        )}
+          {hasMore && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false }}
+              transition={{
+                duration: 0.6,
+                delay: 0.8 + displayedProjects.length * 0.1,
+              }}
+              className="mt-16 flex justify-center"
+            >
+              <button
+                onClick={loadMore}
+                disabled={isLoading}
+                className="group relative overflow-hidden rounded-full bg-gradient-to-r from-neutral-800 to-neutral-900 px-8 py-4 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:from-neutral-700 hover:to-neutral-800 hover:shadow-xl disabled:opacity-50 dark:from-neutral-100 dark:to-neutral-200 dark:text-neutral-900 dark:hover:from-neutral-200 dark:hover:to-neutral-300"
+              >
+                <span className="relative z-10">
+                  {isLoading ? t("Projects.loading") : t("Projects.loadMore")}
+                </span>
+                <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+              </button>
+            </motion.div>
+          )}
+        </div>
       </div>
     </section>
   );

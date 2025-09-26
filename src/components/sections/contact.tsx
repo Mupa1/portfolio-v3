@@ -2,7 +2,14 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
-import { Mail, Send, User } from "lucide-react";
+import {
+  CheckCircle,
+  Mail,
+  MessageSquare,
+  Send,
+  User,
+  XCircle,
+} from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -12,9 +19,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { ContactFormValidation } from "@/lib/validations/contact";
-
-import Footer from "./footer";
-import AtSign from "../ui/at-sign";
 
 type ServerState = {
   submitting: boolean;
@@ -90,118 +94,158 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="center-snap m-auto max-w-7xl py-12 sm:py-20"
+      className="flex-center min-h-screen w-full snap-start snap-always py-12 sm:py-20"
     >
-      <div className="section-padding-x mx-auto mt-8 max-w-7xl px-6">
-        <motion.h3
-          initial={{ opacity: 0, x: -25 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: false }}
-          transition={{ duration: 0.9, delay: 0.2 }}
-        >
-          {t("contact")}
-        </motion.h3>
-        <div className="mt-8 grid grid-cols-1 gap-12 lg:grid-cols-2">
-          <div className="max-w-xl">
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-              <div className="space-y-2">
-                <label htmlFor="name" className="text-sm font-medium">
-                  {t("Contact.name")}
-                </label>
-                <div>
-                  <div className="relative">
-                    <User className="absolute left-3 top-1/2 size-5 -translate-y-1/2 text-neutral-600 dark:text-neutral-400" />
+      <div className="w-full max-w-7xl">
+        <div className="section-padding-x mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="mb-16 text-center"
+          >
+            <h3>{t("contact")}</h3>
+            <p className="mx-auto max-w-2xl text-lg text-neutral-600 dark:text-neutral-400">
+              {t("Contact.description")}
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="mx-auto max-w-2xl"
+          >
+            <div className="rounded-2xl bg-gradient-to-br from-neutral-50 to-neutral-100 p-8 shadow-xl dark:from-neutral-900 dark:to-neutral-800">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                <div className="space-y-2">
+                  <label
+                    htmlFor="name"
+                    className="flex items-center gap-2 text-sm font-semibold text-neutral-700 dark:text-neutral-300"
+                  >
+                    <User className="size-4" />
+                    {t("Contact.name")}
+                  </label>
+                  <div>
                     <Input
                       id="name"
                       type="text"
                       {...register("name")}
-                      className="border-0 bg-neutral-50 pl-10 shadow-md dark:bg-neutral-900"
+                      className="h-12 border-0 bg-white px-4 shadow-sm transition-all duration-200 focus:shadow-md dark:bg-neutral-800"
+                      placeholder="Your full name"
                     />
                   </div>
                   {errors.name && (
-                    <p className="mt-1 text-sm text-red-500">
+                    <motion.p
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="flex items-center gap-1 text-sm text-red-500"
+                    >
+                      <XCircle className="size-4" />
                       {errors.name.message}
-                    </p>
+                    </motion.p>
                   )}
                 </div>
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-medium">
-                  {t("Contact.email")}
-                </label>
-                <div>
-                  <div className="relative">
-                    <Mail className="absolute left-3 top-1/2 size-5 -translate-y-1/2 text-neutral-600 dark:text-neutral-400" />
+
+                <div className="space-y-2">
+                  <label
+                    htmlFor="email"
+                    className="flex items-center gap-2 text-sm font-semibold text-neutral-700 dark:text-neutral-300"
+                  >
+                    <Mail className="size-4" />
+                    {t("Contact.email")}
+                  </label>
+                  <div>
                     <Input
                       id="email"
                       type="email"
                       {...register("email")}
-                      className="border-0 bg-neutral-50 pl-10 shadow-md dark:bg-neutral-900"
+                      className="h-12 border-0 bg-white px-4 shadow-sm transition-all duration-200 focus:shadow-md dark:bg-neutral-800"
+                      placeholder="your.email@example.com"
                     />
                   </div>
                   {errors.email && (
-                    <p className="mt-1 text-sm text-red-500">
+                    <motion.p
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="flex items-center gap-1 text-sm text-red-500"
+                    >
+                      <XCircle className="size-4" />
                       {errors.email.message}
-                    </p>
+                    </motion.p>
                   )}
                 </div>
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium">
-                  {t("Contact.message")}
-                </label>
-                <Textarea
-                  id="message"
-                  {...register("message")}
-                  className="min-h-[150px] border-0 bg-neutral-50 pl-10 shadow-md dark:bg-neutral-900"
-                />
-                {errors.message && (
-                  <p className="mt-1 text-sm text-red-500">
-                    {errors.message.message}
-                  </p>
+
+                <div className="space-y-2">
+                  <label
+                    htmlFor="message"
+                    className="flex items-center gap-2 text-sm font-semibold text-neutral-700 dark:text-neutral-300"
+                  >
+                    <MessageSquare className="size-4" />
+                    {t("Contact.message")}
+                  </label>
+                  <div>
+                    <Textarea
+                      id="message"
+                      {...register("message")}
+                      className="min-h-[20px] border-0 bg-white px-4 py-3 shadow-sm transition-all duration-200 focus:shadow-md dark:bg-neutral-800"
+                      placeholder="Tell me about your project, ideas, or just say hello..."
+                    />
+                  </div>
+                  {errors.message && (
+                    <motion.p
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="flex items-center gap-1 text-sm text-red-500"
+                    >
+                      <XCircle className="size-4" />
+                      {errors.message.message}
+                    </motion.p>
+                  )}
+                </div>
+
+                {serverState.status && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className={`flex items-center gap-2 rounded-lg p-3 text-sm font-medium ${
+                      serverState.status.ok
+                        ? "bg-green-50 text-green-700 dark:bg-green-900/20 dark:text-green-400"
+                        : "bg-red-50 text-red-700 dark:bg-red-900/20 dark:text-red-400"
+                    }`}
+                  >
+                    {serverState.status.ok ? (
+                      <CheckCircle className="size-4" />
+                    ) : (
+                      <XCircle className="size-4" />
+                    )}
+                    {serverState.status.msg}
+                  </motion.div>
                 )}
-              </div>
-              {serverState.status && (
-                <p
-                  className={`text-sm ${
-                    serverState.status.ok ? "text-green-500" : "text-red-500"
-                  }`}
+
+                <Button
+                  type="submit"
+                  className="group h-12 w-full bg-gradient-to-r from-neutral-600 to-neutral-700 text-white shadow-lg transition-all duration-200 hover:from-neutral-700 hover:to-neutral-800 hover:shadow-xl disabled:opacity-50 dark:from-neutral-400 dark:to-neutral-500 dark:hover:from-neutral-300 dark:hover:to-neutral-400"
+                  disabled={serverState.submitting}
                 >
-                  {serverState.status.msg}
-                </p>
-              )}
-              <Button
-                type="submit"
-                className="w-full bg-neutral-600 text-neutral-100 shadow-md hover:bg-neutral-700 dark:bg-neutral-400 dark:hover:bg-neutral-300"
-                disabled={serverState.submitting}
-              >
-                {serverState.submitting ? (
-                  <>
-                    <Send className="mr-2 size-4 animate-spin" />
-                    {t("Contact.sending")}
-                  </>
-                ) : (
-                  <>
-                    <Send className="mr-2 size-4" />
-                    {t("Contact.send")}
-                  </>
-                )}
-              </Button>
-            </form>
-          </div>
-          <div className="hidden items-center justify-center lg:flex">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="relative h-[400px] w-full"
-            >
-              <AtSign />
-            </motion.div>
-          </div>
+                  {serverState.submitting ? (
+                    <>
+                      <Send className="mr-2 size-4 animate-spin" />
+                      {t("Contact.sending")}
+                    </>
+                  ) : (
+                    <>
+                      <Send className="mr-2 size-4 transition-transform group-hover:translate-x-1" />
+                      {t("Contact.send")}
+                    </>
+                  )}
+                </Button>
+              </form>
+            </div>
+          </motion.div>
         </div>
-        <Footer />
       </div>
     </section>
   );

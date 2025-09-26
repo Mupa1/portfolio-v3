@@ -5,6 +5,7 @@ import {
   Sheet,
   SheetClose,
   SheetContent,
+  SheetDescription,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
@@ -28,13 +29,19 @@ const Menu = () => {
           </Button>
         </SheetTrigger>
       </div>
-      <SheetContent side="right" className="flex-between border-none pt-20">
+      <SheetContent side="right" className="border-none">
         <SheetTitle className="hidden">{t("navigation")}</SheetTitle>
-        <div className="flex h-[calc(100vh-80px)] flex-col justify-between overflow-y-auto">
+        <SheetDescription className="hidden">
+          {t("navigation")} menu with navigation links and social media icons
+        </SheetDescription>
+        <div className="flex h-full items-center justify-center">
           <SheetClose asChild>
-            <section className="size-full">
-              <Navlinks isMobileNav className="flex flex-col" />
-              <SocialIcons className="flex-center gap-8 pt-20 text-2xl text-neutral-900/70 dark:text-neutral-100/70 sm:text-3xl md:text-4xl lg:text-5xl" />
+            <section className="flex flex-col items-center gap-16">
+              <Navlinks
+                isMobileNav
+                className="flex flex-col items-center gap-8"
+              />
+              <SocialIcons className="flex gap-8 text-2xl text-neutral-900/70 dark:text-neutral-100/70 sm:text-3xl md:text-4xl lg:text-5xl" />
             </section>
           </SheetClose>
         </div>

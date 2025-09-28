@@ -20,11 +20,14 @@ const Language = () => {
   return (
     <Button
       variant="ghost"
-      className="hover-color hover:animate-wiggle"
+      className="hover-color flex items-center gap-2 hover:animate-wiggle"
       onClick={() => switchLocale(currentLocale === "en" ? "de" : "en")}
       aria-label={t("switchLanguage")}
     >
-      {t("language")}
+      <span className="text-lg">{currentLocale === "en" ? "🇩🇪" : "🇺🇸"}</span>
+      <span className="text-sm font-medium">
+        {currentLocale === "en" ? "DE" : "EN"}
+      </span>
     </Button>
   );
 };

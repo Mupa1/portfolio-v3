@@ -7,7 +7,7 @@ type SocialIconsTypes = { className?: string };
 
 const SocialIcons: React.FC<SocialIconsTypes> = ({ className }) => {
   return (
-    <div className="relative flex flex-col items-center">
+    <div className="relative flex items-center">
       <ul className={cn(className, "text-lg font-semibold leading-6")}>
         {socialIcons.map((link) => (
           <li key={link.id} className="hover:animate-wiggle">

@@ -5,16 +5,45 @@
   "contact": "CONTACT",
   "home": "HOME",
   "about": "ABOUT ME",
+  "experience": "EXPERIENCE",
+  "education": "EDUCATION",
   "navigation": "Navigation",
   "Hero": {
-    "frontend": "FRONTEND",
-    "engineer": "ENGINEER",
-    "description": "I like to build scalable frontend products with great user experiences."
+    "frontend": "FULLSTACK",
+    "engineer": "DEVELOPER",
+    "description": "Delivering responsive, scalable, and user-friendly web applications by combining professional frontend experience with fullstack skills. Passionate about clean code, accessible design, and seamless user experiences.",
+    "viewProjects": "View Projects",
+    "contactMe": "Contact Me"
   },
   "About": {
     "title": "ABOUT ME",
-    "subtitle": "Frontend-Entwicklerin",
-    "description": "I'm Mupa Nzaphila — a frontend engineer with about 3 years of experience building clean, accessible, and high-performance web interfaces. At HEYCAR and ACCURE Battery Intelligence, I developed finance tools used by thousands, optimized dashboards for large datasets, and solved real-world performance challenges. I work mainly with React and Next.js, and love turning complex ideas into intuitive, scalable user experiences. I'm passionate about great UX, thoughtful design, and building products that not only work — but feel great to use."
+    "subtitle": "Full-Stack Developer",
+    "description": "I'm Mupa Nzaphila, a Full-Stack Developer with professional frontend experience and comprehensive full-stack training. I build responsive, scalable, and user-friendly web applications using React, Next.js, Node.js, and modern backend technologies, turning complex problems into intuitive solutions. I'm passionate about clean code, thoughtful design, and creating products that not only work — but delight users.",
+    "whatIDo": "What I Do",
+    "frontend": {
+      "title": "Frontend Development",
+      "description": "React, Next.js, TypeScript, Tailwind"
+    },
+    "backend": {
+      "title": "Backend Development",
+      "description": "Node.js, APIs, Serverless"
+    },
+    "database": {
+      "title": "Database & Data",
+      "description": "PostgreSQL, MongoDB, Prisma"
+    },
+    "devops": {
+      "title": "DevOps & Deployment",
+      "description": "AWS, Vercel, Docker, CI/CD"
+    },
+    "ux": {
+      "title": "User Experience",
+      "description": "Clean, accessible interfaces"
+    },
+    "fullstack": {
+      "title": "Full-Stack Solutions",
+      "description": "End-to-end development"
+    }
   },
   "Projects": {
     "liveDemo": "Live Demo",
@@ -22,18 +51,69 @@
     "loadMore": "Load More",
     "loading": "Loading..."
   },
+  "Experience": {
+    "title": "PROFESSIONAL EXPERIENCE",
+    "independent": {
+      "company": "Independent Projects",
+      "position": "Fullstack Development",
+      "period": "Jun 2024 – Present",
+      "achievements": [
+        "Designing and building fullstack applications using React, Next.js, Vue.js, Node.js, and MongoDB",
+        "Developing portfolio projects such as E-commerce Product Tracker and Election Monitoring System",
+        "Expanding backend expertise with API integrations, authentication, and database management",
+        "Continuously refining frontend skills with a focus on performance, accessibility, and UX"
+      ]
+    },
+    "accure": {
+      "company": "Accure Battery Intelligence",
+      "position": "Frontend Engineer",
+      "period": "Oct 2023 – May 2024",
+      "achievements": [
+        "Optimized dashboards for large-scale datasets, improving performance and usability",
+        "Built data visualizations supporting 20+ corporate clients in making data-driven decisions",
+        "Integrated backend APIs into the frontend, reducing response times and enhancing UX"
+      ]
+    },
+    "heycar": {
+      "company": "Heycar",
+      "position": "Frontend Engineer",
+      "period": "Oct 2021 – Sep 2023",
+      "achievements": [
+        "Developed finance calculators and checkout tools used by 100,000+ monthly users",
+        "Implemented responsive design, boosting mobile engagement and cross-device functionality",
+        "Collaborated with backend teams to integrate APIs and optimize data processing"
+      ]
+    }
+  },
+  "Education": {
+    "title": "EDUCATION & CERTIFICATIONS",
+    "subtitle": "Continuous learning and professional development",
+    "viewCertificate": "View Certificate",
+    "google": {
+      "institution": "Google",
+      "program": "Google UX Design Certificate",
+      "period": "November 2024 – February 2025",
+      "description": "Comprehensive UX design program covering user research, wireframing, prototyping, and usability testing. Gained expertise in design thinking, accessibility, and creating user-centered digital experiences."
+    },
+    "microverse": {
+      "institution": "Microverse",
+      "program": "Full-Stack Web Development",
+      "period": "January 2020 – February 2021",
+      "description": "Intensive full-stack development program focusing on modern web technologies, pair programming, and remote collaboration. Mastered React, Ruby on Rails, PostgreSQL, and agile development methodologies."
+    }
+  },
   "Contact": {
     "name": "Your Name",
     "email": "Your Email",
     "message": "Your Message",
     "send": "Send Message",
-    "sending": "Sending..."
+    "sending": "Sending...",
+    "description": "I'm always open to discussing new projects or opportunities - feel free to get in touch!"
   },
   "Footer": {
     "navigation": "Navigation",
     "social": "Social",
     "contact": "Contact",
-    "email": "Email",
-    "copyright": "© 2024 Mupa M'mbetsa Nzaphila"
+    "email": "Email"
   }
 }

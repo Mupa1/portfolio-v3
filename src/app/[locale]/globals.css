@@ -3,20 +3,25 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply font-sans bg-neutral-100 dark:bg-neutral-950 text-neutral-600 dark:text-neutral-400 md:text-base lg:text-lg leading-6;
+    overflow-x: hidden;
   }
 
   h2 {
-    @apply text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-semibold;
+    @apply text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-semibold text-neutral-900 dark:text-neutral-100;
   }
 
   h3 {
-    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold pb-2;
+    @apply mb-4 text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-5xl lg:text-6xl;
   }
 
   h4 {
-    @apply text-xl font-semibold;
+    @apply text-xl font-semibold text-neutral-900 dark:text-neutral-100;
   }
 
   p {
@@ -57,7 +62,57 @@
     @apply flex justify-center items-center;
   }
 
-  .center-snap {
-    @apply min-h-screen snap-center snap-always;
+  .no-horizontal-scroll {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  .text-primary {
+    @apply text-neutral-900 dark:text-neutral-100;
+  }
+
+  .text-secondary {
+    @apply text-neutral-600 dark:text-neutral-400;
+  }
+
+  .text-muted {
+    @apply text-neutral-500 dark:text-neutral-500;
+  }
+
+  .bg-card {
+    @apply bg-white dark:bg-neutral-900;
+  }
+
+  .bg-muted {
+    @apply bg-neutral-50 dark:bg-neutral-800;
+  }
+
+  .border-subtle {
+    @apply border-neutral-200 dark:border-neutral-700;
+  }
+
+  /* Border Radius System */
+  .radius-sm {
+    @apply rounded-sm; /* 2px - Small elements like close buttons */
+  }
+
+  .radius-md {
+    @apply rounded-md; /* 6px - Default for most elements */
+  }
+
+  .radius-lg {
+    @apply rounded-lg; /* 8px - Form elements, inputs */
+  }
+
+  .radius-xl {
+    @apply rounded-xl; /* 12px - Cards, buttons */
+  }
+
+  .radius-2xl {
+    @apply rounded-2xl; /* 16px - Large cards, containers */
+  }
+
+  .radius-full {
+    @apply rounded-full; /* 50% - Pills, circular elements */
   }
 }

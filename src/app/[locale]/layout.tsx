@@ -4,10 +4,11 @@ import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 
-import ThemeProvider from "@/app/[locale]/context/Theme";
 import Navbar from "@/components/navigation";
+import FixedSocialIcons from "@/components/ui/fixed-social-icons";
 import Overlay from "@/components/ui/overlay";
-import SocialIcons from "@/components/ui/social-icons";
+import { SocialIconsVisibilityProvider } from "@/context/SocialIconsVisibility";
+import ThemeProvider from "@/context/Theme";
 import { routing } from "@/i18n/routing";
 
 import "./globals.css";
@@ -26,6 +27,9 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Mupa M'mbetsa Nzaphila | Portfolio",
   description: "Frontend Developer and Designer Portfolio",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 interface LayoutProps {
@@ -56,10 +60,12 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
           disableTransitionOnChange
         >
           <NextIntlClientProvider messages={messages}>
-            <Overlay />
-            <Navbar />
-            <SocialIcons className="fixed bottom-5 left-[-7] z-10 hidden h-screen w-14 flex-col items-center justify-end md:left-7 md:flex md:gap-y-8" />
-            <main>{children}</main>
+            <SocialIconsVisibilityProvider>
+              <Overlay />
+              <Navbar />
+              <FixedSocialIcons />
+              <main>{children}</main>
+            </SocialIconsVisibilityProvider>
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>

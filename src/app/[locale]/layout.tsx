@@ -26,7 +26,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Mupa M'mbetsa Nzaphila | Portfolio",
-  description: "Frontend Developer and Designer Portfolio",
+  description: "Fullstack Developer, Frontend Developer and Designer Portfolio",
   icons: {
     icon: "/favicon.ico",
   },

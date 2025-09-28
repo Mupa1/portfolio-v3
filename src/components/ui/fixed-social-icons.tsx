@@ -11,7 +11,7 @@ const FixedSocialIcons = () => {
   return (
     <div
       className={cn(
-        "fixed bottom-5 left-[-7] z-10 hidden h-screen w-14 flex-col items-center justify-end transition-opacity duration-300 md:left-7 md:flex",
+        "fixed bottom-5 left-0 z-10 hidden h-screen w-14 flex-col items-center justify-end transition-opacity duration-300 md:left-7 md:flex",
         isFooterInView ? "opacity-0" : "opacity-100"
       )}
     >

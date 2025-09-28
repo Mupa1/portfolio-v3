@@ -9,10 +9,7 @@ const About = () => {
   const t = useTranslations();
 
   return (
-    <section
-      id="about"
-      className="flex-center min-h-screen w-full snap-start snap-always py-12 sm:py-20"
-    >
+    <section id="about" className="flex-center w-full py-16 sm:py-24">
       <div className="w-full max-w-7xl">
         <div className="section-padding-x mx-auto px-6">
           <motion.div
@@ -51,7 +48,7 @@ const About = () => {
                   transition={{ duration: 0.6, delay: 0.6 }}
                   className="flex flex-col items-center gap-4 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 p-6 text-center dark:from-blue-900/20 dark:to-blue-800/20"
                 >
-                  <div className="rounded-lg bg-blue-500 p-3">
+                  <div className="rounded-md bg-blue-500 p-3">
                     <Code className="size-6 text-white" />
                   </div>
                   <div>
@@ -71,7 +68,7 @@ const About = () => {
                   transition={{ duration: 0.6, delay: 0.7 }}
                   className="flex flex-col items-center gap-4 rounded-xl bg-gradient-to-br from-purple-50 to-purple-100 p-6 text-center dark:from-purple-900/20 dark:to-purple-800/20"
                 >
-                  <div className="rounded-lg bg-purple-500 p-3">
+                  <div className="rounded-md bg-purple-500 p-3">
                     <Server className="size-6 text-white" />
                   </div>
                   <div>
@@ -91,7 +88,7 @@ const About = () => {
                   transition={{ duration: 0.6, delay: 0.8 }}
                   className="flex flex-col items-center gap-4 rounded-xl bg-gradient-to-br from-green-50 to-green-100 p-6 text-center dark:from-green-900/20 dark:to-green-800/20"
                 >
-                  <div className="rounded-lg bg-green-500 p-3">
+                  <div className="rounded-md bg-green-500 p-3">
                     <Database className="size-6 text-white" />
                   </div>
                   <div>
@@ -111,7 +108,7 @@ const About = () => {
                   transition={{ duration: 0.6, delay: 0.9 }}
                   className="flex flex-col items-center gap-4 rounded-xl bg-gradient-to-br from-orange-50 to-orange-100 p-6 text-center dark:from-orange-900/20 dark:to-orange-800/20"
                 >
-                  <div className="rounded-lg bg-orange-500 p-3">
+                  <div className="rounded-md bg-orange-500 p-3">
                     <Rocket className="size-6 text-white" />
                   </div>
                   <div>
@@ -131,7 +128,7 @@ const About = () => {
                   transition={{ duration: 0.6, delay: 1.0 }}
                   className="flex flex-col items-center gap-4 rounded-xl bg-gradient-to-br from-pink-50 to-pink-100 p-6 text-center dark:from-pink-900/20 dark:to-pink-800/20"
                 >
-                  <div className="rounded-lg bg-pink-500 p-3">
+                  <div className="rounded-md bg-pink-500 p-3">
                     <Users className="size-6 text-white" />
                   </div>
                   <div>
@@ -151,7 +148,7 @@ const About = () => {
                   transition={{ duration: 0.6, delay: 1.1 }}
                   className="flex flex-col items-center gap-4 rounded-xl bg-gradient-to-br from-indigo-50 to-indigo-100 p-6 text-center dark:from-indigo-900/20 dark:to-indigo-800/20"
                 >
-                  <div className="rounded-lg bg-indigo-500 p-3">
+                  <div className="rounded-md bg-indigo-500 p-3">
                     <Lightbulb className="size-6 text-white" />
                   </div>
                   <div>

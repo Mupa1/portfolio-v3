@@ -17,7 +17,7 @@ const Footer = () => {
     setIsFooterInView(isIntersecting);
   }, [isIntersecting, setIsFooterInView]);
   return (
-    <footer ref={ref} className="snap-start snap-always">
+    <footer ref={ref}>
       <div className="w-full border-t border-neutral-200 py-6 dark:border-neutral-800">
         <div className="flex items-center justify-between">
           <SocialIcons className="flex gap-6" />

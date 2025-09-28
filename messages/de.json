@@ -5,6 +5,8 @@
   "contact": "KONTAKT",
   "home": "START",
   "about": "ÜBER MICH",
+  "experience": "ERFAHRUNG",
+  "education": "BILDUNG",
   "navigation": "Navigation",
   "Hero": {
     "frontend": "FULLSTACK-",
@@ -32,7 +34,7 @@
     },
     "devops": {
       "title": "DevOps & Deployment",
-      "description": "Vercel, Docker, CI/CD"
+      "description": "AWS, Vercel, Docker, CI/CD"
     },
     "ux": {
       "title": "Benutzererfahrung",
@@ -48,6 +50,57 @@
     "sourceCode": "Quellcode",
     "loadMore": "Mehr laden",
     "loading": "Lädt..."
+  },
+  "Experience": {
+    "title": "BERUFSERFAHRUNG",
+    "independent": {
+      "company": "Eigenständige Projekte",
+      "position": "Full-Stack Entwicklung",
+      "period": "Jun 2024 – Gegenwart",
+      "achievements": [
+        "Entwicklung und Design von Full-Stack-Anwendungen mit React, Next.js, Vue.js, Node.js und MongoDB",
+        "Entwicklung von Portfolio-Projekten wie E-Commerce-Produkt-Tracker und Wahlüberwachungssystem",
+        "Erweiterung der Backend-Expertise mit API-Integrationen, Authentifizierung und Datenbankmanagement",
+        "Kontinuierliche Verbesserung der Frontend-Fähigkeiten mit Fokus auf Performance, Barrierefreiheit und UX"
+      ]
+    },
+    "accure": {
+      "company": "Accure Battery Intelligence",
+      "position": "Frontend Engineer",
+      "period": "Okt 2023 – Mai 2024",
+      "achievements": [
+        "Optimierte Dashboards für große Datensätze und verbesserte Performance und Usability",
+        "Erstellte Datenvisualisierungen für 20+ Unternehmenskunden bei datengestützten Entscheidungen",
+        "Integrierte Backend-APIs ins Frontend und reduzierte Antwortzeiten für bessere UX"
+      ]
+    },
+    "heycar": {
+      "company": "Heycar",
+      "position": "Frontend Engineer",
+      "period": "Okt 2021 – Sep 2023",
+      "achievements": [
+        "Entwickelte Finanzrechner und Checkout-Tools für 100.000+ monatliche Benutzer",
+        "Implementierte responsives Design und steigerte mobile Engagement und geräteübergreifende Funktionalität",
+        "Arbeitete mit Backend-Teams zusammen zur API-Integration und Datenverarbeitungsoptimierung"
+      ]
+    }
+  },
+  "Education": {
+    "title": "BILDUNG & ZERTIFIKATE",
+    "subtitle": "Kontinuierliches Lernen und berufliche Weiterentwicklung",
+    "viewCertificate": "Zertifikat ansehen",
+    "google": {
+      "institution": "Google",
+      "program": "Google UX Design Zertifikat",
+      "period": "November 2024 – Februar 2025",
+      "description": "Umfassendes UX-Design-Programm mit Benutzerforschung, Wireframing, Prototyping und Usability-Testing. Expertise in Design Thinking, Barrierefreiheit und benutzerzentrierten digitalen Erfahrungen."
+    },
+    "microverse": {
+      "institution": "Microverse",
+      "program": "Full-Stack Webentwicklung",
+      "period": "Januar 2020 – Februar 2021",
+      "description": "Intensives Full-Stack-Entwicklungsprogramm mit modernen Webtechnologien, Pair Programming und Remote-Kollaboration. Meisterte React, Ruby on Rails, PostgreSQL und agile Entwicklungsmethoden."
+    }
   },
   "Contact": {
     "name": "Ihr Name",

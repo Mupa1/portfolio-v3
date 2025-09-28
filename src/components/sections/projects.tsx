@@ -56,7 +56,7 @@ const Projects = ({ itemsPerPage = 8 }: ProjectsProps) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false }}
                 transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-                className="group relative overflow-hidden rounded-md bg-white shadow-xl transition-all duration-300 hover:shadow-2xl dark:bg-neutral-900"
+                className="group relative overflow-hidden rounded-xl bg-white shadow-xl transition-all duration-300 hover:shadow-2xl dark:bg-neutral-900"
               >
                 <div className="relative h-64 overflow-hidden">
                   <Image
@@ -92,7 +92,7 @@ const Projects = ({ itemsPerPage = 8 }: ProjectsProps) => {
                 </div>
 
                 <div className="p-6">
-                  <h4 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100">
+                  <h4 className="text-xl font-bold text-neutral-900 dark:text-neutral-100">
                     {project.title}
                   </h4>
                   <p className="mt-3 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
@@ -104,7 +104,7 @@ const Projects = ({ itemsPerPage = 8 }: ProjectsProps) => {
                       {project.techStack.map((tech) => (
                         <span
                           key={tech}
-                          className="rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300"
+                          className="rounded-md bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300"
                         >
                           {tech}
                         </span>
@@ -129,7 +129,7 @@ const Projects = ({ itemsPerPage = 8 }: ProjectsProps) => {
               <button
                 onClick={loadMore}
                 disabled={isLoading}
-                className="group relative overflow-hidden rounded-full bg-gradient-to-r from-neutral-800 to-neutral-900 px-8 py-4 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:from-neutral-700 hover:to-neutral-800 hover:shadow-xl disabled:opacity-50 dark:from-neutral-100 dark:to-neutral-200 dark:text-neutral-900 dark:hover:from-neutral-200 dark:hover:to-neutral-300"
+                className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 px-8 py-4 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:from-blue-700 hover:to-blue-800 hover:shadow-xl disabled:opacity-50 dark:from-blue-500 dark:to-blue-600 dark:hover:from-blue-600 dark:hover:to-blue-700"
               >
                 <span className="relative z-10">
                   {isLoading ? t("Projects.loading") : t("Projects.loadMore")}

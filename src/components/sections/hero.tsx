@@ -11,25 +11,33 @@ const Hero = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const headerOffset = 80; // Account for fixed header
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition =
+        elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
     }
   };
 
   return (
     <section
       id="home"
-      className="flex-center h-screen w-full snap-start snap-always flex-col gap-6 text-center"
+      className="flex-center min-h-screen w-full flex-col gap-6 py-20 text-center"
     >
       <h2>
         <div>{t("Hero.frontend")}</div>
         <div>{t("Hero.engineer")}</div>
       </h2>
       <p className="mx-auto max-w-3xl">{t("Hero.description")}</p>
-      <div className="mt-4 flex flex-col gap-4 sm:flex-row">
+      <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:justify-center">
         <Button
           onClick={() => scrollToSection("projects")}
           size="lg"
-          className="w-full bg-gradient-to-r from-neutral-600 to-neutral-700 text-white shadow-lg transition-all duration-200 hover:from-neutral-700 hover:to-neutral-800 hover:shadow-xl dark:from-neutral-400 dark:to-neutral-500 dark:hover:from-neutral-300 dark:hover:to-neutral-400 sm:w-auto"
+          className="w-full min-w-[160px] touch-manipulation rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg transition-all duration-200 hover:from-blue-700 hover:to-blue-800 hover:shadow-xl dark:from-blue-500 dark:to-blue-600 dark:text-blue-100 dark:hover:from-blue-600 dark:hover:to-blue-700 sm:w-auto"
         >
           {t("Hero.viewProjects")}
         </Button>
@@ -37,7 +45,7 @@ const Hero = () => {
           onClick={() => scrollToSection("contact")}
           variant="outline"
           size="lg"
-          className="w-full border-2 border-neutral-300 bg-transparent text-neutral-700 shadow-lg transition-all duration-200 hover:bg-gradient-to-r hover:from-neutral-50 hover:to-neutral-100 hover:shadow-xl dark:border-neutral-600 dark:text-neutral-300 dark:hover:from-neutral-900 dark:hover:to-neutral-950 sm:w-auto"
+          className="w-full min-w-[160px] touch-manipulation rounded-lg border-2 bg-transparent text-blue-700 shadow-lg transition-all duration-200 hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100 hover:shadow-xl dark:border-blue-600 dark:text-blue-100 dark:hover:from-blue-900/20 dark:hover:to-blue-800/20 sm:w-auto"
         >
           {t("Hero.contactMe")}
         </Button>

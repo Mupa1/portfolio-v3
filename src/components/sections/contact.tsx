@@ -190,7 +190,7 @@ const Contact = () => {
                     <Textarea
                       id="message"
                       {...register("message")}
-                      className="min-h-[20px] border-0 bg-white px-4 py-3 shadow-sm transition-all duration-200 focus:shadow-md dark:bg-neutral-800"
+                      className="border-0 bg-white px-4 py-3 shadow-sm transition-all duration-200 focus:shadow-md dark:bg-neutral-800"
                       placeholder="Tell me about your project, ideas, or just say hello..."
                     />
                   </div>
@@ -210,7 +210,7 @@ const Contact = () => {
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className={`flex items-center gap-2 rounded-lg p-3 text-sm font-medium ${
+                    className={`flex items-center gap-2 rounded-md p-3 text-sm font-medium ${
                       serverState.status.ok
                         ? "bg-green-50 text-green-700 dark:bg-green-900/20 dark:text-green-400"
                         : "bg-red-50 text-red-700 dark:bg-red-900/20 dark:text-red-400"
@@ -227,7 +227,7 @@ const Contact = () => {
 
                 <Button
                   type="submit"
-                  className="group h-12 w-full bg-gradient-to-r from-neutral-600 to-neutral-700 text-white shadow-lg transition-all duration-200 hover:from-neutral-700 hover:to-neutral-800 hover:shadow-xl disabled:opacity-50 dark:from-neutral-400 dark:to-neutral-500 dark:hover:from-neutral-300 dark:hover:to-neutral-400"
+                  className="group h-12 w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg transition-all duration-200 hover:from-blue-700 hover:to-blue-800 hover:shadow-xl disabled:opacity-50 dark:from-blue-500 dark:to-blue-600 dark:text-blue-100 dark:hover:from-blue-600 dark:hover:to-blue-700"
                   disabled={serverState.submitting}
                 >
                   {serverState.submitting ? (

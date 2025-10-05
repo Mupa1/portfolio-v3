@@ -18,6 +18,7 @@ import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { trackFormSubmission } from "@/lib/analytics";
 import { ContactFormValidation } from "@/lib/validations/contact";
 
 type ServerState = {
@@ -77,6 +78,7 @@ const Contact = () => {
       if (response.ok) {
         await response.json();
         reset();
+        trackFormSubmission("contact_form");
         handleServerResponse(true, "Message sent successfully!", null);
       } else {
         const data = await response.json();

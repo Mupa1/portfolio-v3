@@ -9,16 +9,16 @@
   "education": "EDUCATION",
   "navigation": "Navigation",
   "Hero": {
-    "frontend": "FULLSTACK",
-    "engineer": "DEVELOPER",
-    "description": "Delivering responsive, scalable, and user-friendly web applications by combining professional frontend experience with fullstack skills. Passionate about clean code, accessible design, and seamless user experiences.",
+    "frontend": "FULL STACK",
+    "engineer": "ENGINEER",
+    "description": "Delivering responsive, scalable, and user-friendly web applications by combining professional frontend experience with Full Stack skills. Passionate about clean code, accessible design, and seamless user experiences.",
     "viewProjects": "View Projects",
     "contactMe": "Contact Me"
   },
   "About": {
     "title": "ABOUT ME",
-    "subtitle": "Full-Stack Developer",
-    "description": "I'm Mupa Nzaphila, a Full-Stack Developer with professional frontend experience and comprehensive full-stack training. I build responsive, scalable, and user-friendly web applications using React, Next.js, Node.js, and modern backend technologies, turning complex problems into intuitive solutions. I'm passionate about clean code, thoughtful design, and creating products that not only work — but delight users.",
+    "subtitle": "Full Stack Engineer",
+    "description": "I'm Mupa Nzaphila, a Full Stack Engineer with professional frontend experience and comprehensive Full Stack training. I build responsive, scalable, and user-friendly web applications using React, Next.js, Node.js, and modern backend technologies, turning complex problems into intuitive solutions. I'm passionate about clean code, thoughtful design, and creating products that not only work — but delight users.",
     "whatIDo": "What I Do",
     "frontend": {
       "title": "Frontend Development",
@@ -41,7 +41,7 @@
       "description": "Clean, accessible interfaces"
     },
     "fullstack": {
-      "title": "Full-Stack Solutions",
+      "title": "Full Stack Solutions",
       "description": "End-to-end development"
     }
   },
@@ -55,10 +55,10 @@
     "title": "PROFESSIONAL EXPERIENCE",
     "independent": {
       "company": "Independent Projects",
-      "position": "Fullstack Development",
+      "position": "Full Stack Development",
       "period": "Jun 2024 – Present",
       "achievements": [
-        "Designing and building fullstack applications using React, Next.js, Vue.js, Node.js, and MongoDB",
+        "Designing and building Full Stack applications using React, Next.js, Vue.js, Node.js, and MongoDB",
         "Developing portfolio projects such as E-commerce Product Tracker and Election Monitoring System",
         "Expanding backend expertise with API integrations, authentication, and database management",
         "Continuously refining frontend skills with a focus on performance, accessibility, and UX"
@@ -97,9 +97,9 @@
     },
     "microverse": {
       "institution": "Microverse",
-      "program": "Full-Stack Web Development",
+      "program": "Full Stack Web Development",
       "period": "January 2020 – February 2021",
-      "description": "Intensive full-stack development program focusing on modern web technologies, pair programming, and remote collaboration. Mastered React, Ruby on Rails, PostgreSQL, and agile development methodologies."
+      "description": "Intensive Full Stack development program focusing on modern web technologies, pair programming, and remote collaboration. Mastered React, Ruby on Rails, PostgreSQL, and agile development methodologies."
     }
   },
   "Contact": {
@@ -115,5 +115,17 @@
     "social": "Social",
     "contact": "Contact",
     "email": "Email"
+  },
+  "metadata": {
+    "title": "Mupa M'mbetsa Nzaphila | Full Stack Engineer & Developer Portfolio",
+    "description": "Mupa M'mbetsa Nzaphila - Full Stack Engineer & Developer specializing in React, Next.js, Node.js, and modern web technologies. Professional portfolio showcasing responsive web applications, frontend development, and full-stack solutions.",
+    "keywords": "Mupa Nzaphila, Full Stack Engineer, Full Stack Developer, React Developer, Next.js Developer, Frontend Engineer, Web Developer, JavaScript Developer, TypeScript Developer, Node.js Developer, Portfolio, Web Development, Software Engineer, Mupa M'mbetsa Nzaphila",
+    "author": "Mupa M'mbetsa Nzaphila",
+    "ogTitle": "Mupa M'mbetsa Nzaphila | Full Stack Engineer Portfolio",
+    "ogDescription": "Professional Full Stack Engineer specializing in React, Next.js, Node.js. View my portfolio of responsive web applications and development projects.",
+    "ogImage": "/images/photo.png",
+    "twitterTitle": "Mupa M'mbetsa Nzaphila | Full Stack Engineer",
+    "twitterDescription": "Full Stack Engineer & Developer - React, Next.js, Node.js specialist. Professional portfolio and development projects.",
+    "twitterImage": "/images/photo.png"
   }
 }

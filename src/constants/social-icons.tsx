@@ -16,6 +16,6 @@ export const socialIcons = [
   {
     id: "twitter",
     icon: <FaXTwitter title="Twitter" />,
-    href: "https://twitter.com/mupa_mmbetsa",
+    href: "https://x.com/mupa_mmbetsa",
   },
 ];

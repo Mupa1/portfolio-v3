@@ -21,8 +21,12 @@ const Footer = () => {
       <div className="w-full border-t border-neutral-200 py-6 dark:border-neutral-800">
         <div className="flex items-center justify-between">
           <SocialIcons className="flex gap-6" />
-          <p className="text-xs text-neutral-600 dark:text-neutral-400">
-            © {currentYear} Mupa M&apos;mbetsa Nzaphila
+          <p className="flex text-xs text-neutral-600 dark:text-neutral-400">
+            © {currentYear}
+            <span className="hidden pl-1 md:block">
+              Mupa M&apos;mbetsa Nzaphila
+            </span>
+            <span className="block pl-1 md:hidden">Mupa M. Nzaphila</span>
           </p>
         </div>
       </div>

@@ -153,10 +153,10 @@ const About = () => {
                   </div>
                   <div>
                     <h5 className="font-semibold text-indigo-900 dark:text-indigo-100">
-                      Full-Stack Solutions
+                      {t("About.fullstack.title")}
                     </h5>
                     <p className="text-sm text-indigo-700 dark:text-indigo-300">
-                      End-to-end development
+                      {t("About.fullstack.description")}
                     </p>
                   </div>
                 </motion.div>

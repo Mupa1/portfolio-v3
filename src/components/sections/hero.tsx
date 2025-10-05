@@ -28,11 +28,15 @@ const Hero = () => {
       id="home"
       className="flex-center min-h-screen w-full flex-col gap-6 py-20 text-center"
     >
-      <h2>
-        <div>{t("Hero.frontend")}</div>
-        <div>{t("Hero.engineer")}</div>
-      </h2>
-      <p className="mx-auto max-w-3xl">{t("Hero.description")}</p>
+      <header>
+        <h2 className="text-4xl font-bold tracking-tight sm:text-6xl">
+          <span className="block">{t("Hero.frontend")}</span>
+          <span className="block">{t("Hero.engineer")}</span>
+        </h2>
+        <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-neutral-600 dark:text-neutral-300">
+          {t("Hero.description")}
+        </p>
+      </header>
       <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:justify-center">
         <Button
           onClick={() => scrollToSection("projects")}

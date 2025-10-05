@@ -11,13 +11,13 @@
   "Hero": {
     "frontend": "FULLSTACK-",
     "engineer": "ENTWICKLERIN",
-    "description": "Bereitstellung reaktionsschneller, skalierbarer und benutzerfreundlicher Webanwendungen durch die Kombination professioneller Frontend-Erfahrung mit Full-Stack-Kenntnissen. Leidenschaft für sauberen Code, zugängliches Design und nahtlose Benutzererlebnisse.",
+    "description": "Bereitstellung reaktionsschneller, skalierbarer und benutzerfreundlicher Webanwendungen durch die Kombination professioneller Frontend-Erfahrung mit Fullstack-Kenntnissen. Leidenschaft für sauberen Code, zugängliches Design und nahtlose Benutzererlebnisse.",
     "viewProjects": "Projekte ansehen",
     "contactMe": "Kontakt aufnehmen"
   },
   "About": {
     "title": "ÜBER MICH",
-    "subtitle": "Full-Stack Entwicklerin",
+    "subtitle": "Fullstack-Entwicklerin",
     "description": "Ich bin Mupa Nzaphila, ein Fullstack-Entwickler mit professioneller Frontend-Erfahrung und Fullstack-Schulung. Ich entwickle responsive, skalierbare und benutzerfreundliche Webanwendungen mit React, Next.js und Node.js und verwandle komplexe Probleme in intuitive Lösungen. Meine Leidenschaft gilt sauberem Code, durchdachtem Design und der Entwicklung von Produkten, die nicht nur funktionieren, sondern auch Nutzer begeistern.",
     "whatIDo": "Was ich mache",
     "frontend": {
@@ -41,7 +41,7 @@
       "description": "Saubere, zugängliche Oberflächen"
     },
     "fullstack": {
-      "title": "Full-Stack Lösungen",
+      "title": "Fullstack Lösungen",
       "description": "End-to-End Entwicklung"
     }
   },
@@ -55,10 +55,10 @@
     "title": "BERUFSERFAHRUNG",
     "independent": {
       "company": "Eigenständige Projekte",
-      "position": "Full-Stack Entwicklung",
+      "position": "Fullstack-Entwicklung",
       "period": "Jun 2024 – Gegenwart",
       "achievements": [
-        "Entwicklung und Design von Full-Stack-Anwendungen mit React, Next.js, Vue.js, Node.js und MongoDB",
+        "Entwicklung und Design von Fullstack-Anwendungen mit React, Next.js, Vue.js, Node.js und MongoDB",
         "Entwicklung von Portfolio-Projekten wie E-Commerce-Produkt-Tracker und Wahlüberwachungssystem",
         "Erweiterung der Backend-Expertise mit API-Integrationen, Authentifizierung und Datenbankmanagement",
         "Kontinuierliche Verbesserung der Frontend-Fähigkeiten mit Fokus auf Performance, Barrierefreiheit und UX"
@@ -97,9 +97,9 @@
     },
     "microverse": {
       "institution": "Microverse",
-      "program": "Full-Stack Webentwicklung",
+      "program": "Fullstack-Webentwicklung",
       "period": "Januar 2020 – Februar 2021",
-      "description": "Intensives Full-Stack-Entwicklungsprogramm mit modernen Webtechnologien, Pair Programming und Remote-Kollaboration. Meisterte React, Ruby on Rails, PostgreSQL und agile Entwicklungsmethoden."
+      "description": "Intensives Fullstack-Entwicklungsprogramm mit modernen Webtechnologien, Pair Programming und Remote-Kollaboration. Meisterte React, Ruby on Rails, PostgreSQL und agile Entwicklungsmethoden."
     }
   },
   "Contact": {
@@ -115,5 +115,17 @@
     "social": "Social Media",
     "contact": "Kontakt",
     "email": "E-Mail"
+  },
+  "metadata": {
+    "title": "Mupa M'mbetsa Nzaphila | Fullstack-Entwicklerin & Entwickler Portfolio",
+    "description": "Mupa Nzaphila - Fullstack-Entwicklerin & Entwicklerin spezialisiert auf React, Next.js, Node.js und moderne Webtechnologien. Professionelles Portfolio mit responsiven Webanwendungen, Frontend-Entwicklung und Fullstack-Lösungen.",
+    "keywords": "Mupa Nzaphila, Fullstack-Entwicklerin, Fullstack-Entwickler, React Entwicklerin, Next.js Entwicklerin, Frontend Engineer, Web Entwicklerin, JavaScript Entwicklerin, TypeScript Entwicklerin, Node.js Entwicklerin, Portfolio, Webentwicklung, Software Entwicklerin, Mupa M'mbetsa Nzaphila",
+    "author": "Mupa M'mbetsa Nzaphila",
+    "ogTitle": "Mupa M'mbetsa Nzaphila | Fullstack-Entwicklerin Portfolio",
+    "ogDescription": "Professionelle Fullstack-Entwicklerin spezialisiert auf React, Next.js, Node.js. Sehen Sie mein Portfolio mit responsiven Webanwendungen und Entwicklungsprojekten.",
+    "ogImage": "/images/photo.png",
+    "twitterTitle": "Mupa M'mbetsa Nzaphila | Fullstack-Entwicklerin",
+    "twitterDescription": "Fullstack-Entwicklerin & Entwicklerin - React, Next.js, Node.js Spezialistin. Professionelles Portfolio und Entwicklungsprojekte.",
+    "twitterImage": "/images/photo.png"
   }
 }

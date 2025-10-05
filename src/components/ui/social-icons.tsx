@@ -1,4 +1,7 @@
+"use client";
+
 import { socialIcons } from "@/constants/social-icons";
+import { trackSocialClick } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 
 import ExternalLink from "./external-link";
@@ -11,7 +14,12 @@ const SocialIcons: React.FC<SocialIconsTypes> = ({ className }) => {
       <ul className={cn(className, "text-lg font-semibold leading-6")}>
         {socialIcons.map((link) => (
           <li key={link.id} className="hover:animate-wiggle">
-            <ExternalLink href={link.href}>{link.icon}</ExternalLink>
+            <ExternalLink
+              href={link.href}
+              onClick={() => trackSocialClick(link.id)}
+            >
+              {link.icon}
+            </ExternalLink>
           </li>
         ))}
       </ul>

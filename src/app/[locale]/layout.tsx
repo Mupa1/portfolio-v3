@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 
+import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 import Navbar from "@/components/navigation";
 import FixedSocialIcons from "@/components/ui/fixed-social-icons";
 import Overlay from "@/components/ui/overlay";
@@ -136,6 +137,11 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
             __html: JSON.stringify(structuredData),
           }}
         />
+        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
+          <GoogleAnalytics
+            measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}
+          />
+        )}
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

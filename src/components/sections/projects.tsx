@@ -7,6 +7,7 @@ import { useState } from "react";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
 
 import { projects } from "@/data/projects";
+import { trackButtonClick, trackExternalLink } from "@/lib/analytics";
 
 interface ProjectsProps {
   itemsPerPage?: number;
@@ -25,10 +26,26 @@ const Projects = ({ itemsPerPage = 8 }: ProjectsProps) => {
 
   const loadMore = () => {
     setIsLoading(true);
+    trackButtonClick("load_more", "projects_section");
     setTimeout(() => {
       setPage((prev) => prev + 1);
       setIsLoading(false);
     }, 500);
+  };
+
+  const handleProjectLinkClick = (
+    url: string | undefined,
+    projectTitle: string
+  ) => {
+    if (url) {
+      trackExternalLink(`${projectTitle} - ${url}`);
+    }
+  };
+
+  const handleGitHubClick = (url: string | undefined, projectTitle: string) => {
+    if (url) {
+      trackExternalLink(`${projectTitle} - GitHub - ${url}`);
+    }
   };
 
   return (
@@ -73,6 +90,9 @@ const Projects = ({ itemsPerPage = 8 }: ProjectsProps) => {
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={() =>
+                          handleProjectLinkClick(project.link, project.title)
+                        }
                         className="flex size-10 items-center justify-center rounded-full bg-white/90 text-neutral-900 shadow-lg transition-colors hover:bg-white"
                       >
                         <FiExternalLink className="size-4" />
@@ -83,6 +103,9 @@ const Projects = ({ itemsPerPage = 8 }: ProjectsProps) => {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={() =>
+                          handleGitHubClick(project.github, project.title)
+                        }
                         className="flex size-10 items-center justify-center rounded-full bg-white/90 text-neutral-900 shadow-lg transition-colors hover:bg-white"
                       >
                         <FiGithub className="size-4" />
@@ -92,7 +115,7 @@ const Projects = ({ itemsPerPage = 8 }: ProjectsProps) => {
                 </div>
 
                 <div className="p-6">
-                  <h4 className="text-xl font-bold text-neutral-900 dark:text-neutral-100">
+                  <h4 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100">
                     {project.title}
                   </h4>
                   <p className="mt-3 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">

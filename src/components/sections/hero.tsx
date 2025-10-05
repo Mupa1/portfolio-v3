@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import React from "react";
 
 import { Button } from "@/components/ui/button";
+import { trackButtonClick } from "@/lib/analytics";
 
 const Hero = () => {
   const t = useTranslations();
@@ -20,6 +21,8 @@ const Hero = () => {
         top: offsetPosition,
         behavior: "smooth",
       });
+
+      trackButtonClick(sectionId, "hero_section");
     }
   };
 

@@ -39,6 +39,11 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "metadata" });
 
   return {
+    metadataBase: new URL(
+      process.env.NODE_ENV === "production"
+        ? "https://mupanzaphila.com"
+        : "http://localhost:3001"
+    ),
     title: t("title"),
     description: t("description"),
     keywords: t("keywords"),

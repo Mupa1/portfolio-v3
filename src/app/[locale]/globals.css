@@ -8,24 +8,59 @@
   }
 
   body {
-    @apply font-sans bg-neutral-100 dark:bg-neutral-950 text-neutral-600 dark:text-neutral-400 md:text-base lg:text-lg leading-6;
+    @apply font-sans bg-neutral-50 text-neutral-900 md:text-base lg:text-lg leading-7;
     overflow-x: hidden;
+    background-attachment: fixed;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      @apply bg-white dark:bg-background-dark text-foreground-dark-secondary;
+    }
+  }
+
+  /* Screen reader only utility */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .focus\:not-sr-only:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: inherit;
+    margin: inherit;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
   }
 
   h2 {
-    @apply text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-semibold text-neutral-900 dark:text-neutral-100;
+    @apply text-4xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 dark:from-foreground-dark dark:via-foreground-dark-secondary dark:to-foreground-dark bg-clip-text text-transparent tracking-tight;
   }
 
   h3 {
-    @apply mb-4 text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-5xl lg:text-6xl;
+    @apply mb-6 text-3xl font-bold tracking-tight bg-gradient-to-r from-neutral-900 to-neutral-700 dark:from-foreground-dark dark:to-foreground-dark-secondary bg-clip-text text-transparent sm:text-4xl md:text-5xl lg:text-6xl;
   }
 
   h4 {
-    @apply text-xl font-semibold text-neutral-900 dark:text-neutral-100;
+    @apply text-lg sm:text-xl font-bold text-neutral-900 dark:text-foreground-dark;
+  }
+
+  h5 {
+    @apply text-base sm:text-lg font-semibold text-neutral-900 dark:text-foreground-dark;
   }
 
   p {
-    @apply tracking-wider text-[12px] sm:text-[14px] md:text-[16px];
+    @apply text-sm sm:text-base leading-relaxed text-neutral-700 dark:text-foreground-dark-secondary;
   }
 
   button {
@@ -33,17 +68,17 @@
   }
 
   a {
-    @apply hover:text-neutral-500 dark:hover:text-neutral-300;
+    @apply hover:text-primary-600 dark:hover:text-primary-400;
   }
 }
 
 @layer utilities {
   .body-padding-x {
-    @apply px-4 md:px-12;
+    @apply px-4 sm:px-6 md:px-8 lg:px-12;
   }
 
   .section-padding-x {
-    @apply px-0.5 sm:px-6 lg:px-8;
+    @apply px-4 sm:px-6 lg:px-8;
   }
 
   .max-width {
@@ -51,7 +86,7 @@
   }
 
   .hover-color {
-    @apply hover:text-neutral-500 dark:hover:text-neutral-300;
+    @apply hover:text-primary-600 dark:hover:text-primary-400;
   }
 
   .flex-between {
@@ -67,28 +102,85 @@
     max-width: 100vw;
   }
 
+  /* Focus visible improvements - Using primary color */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-primary-600 ring-offset-2 dark:ring-primary-400 dark:ring-offset-background-dark;
+  }
+
+  /* Modern glassmorphism utility */
+  .glass {
+    @apply bg-background/70 dark:bg-background-dark-secondary/70 backdrop-blur-xl border border-border/20 dark:border-border-dark/50;
+  }
+
+  .glass-strong {
+    @apply bg-background/80 dark:bg-background-dark-secondary/80 backdrop-blur-2xl border border-border/30 dark:border-border-dark/60;
+  }
+
+  /* Primary gradient - Indigo to Purple (Primary to Secondary) */
+  .gradient-primary {
+    @apply bg-gradient-to-r from-primary-600 via-primary-500 to-secondary-600;
+  }
+
+
+  /* Better touch targets for mobile */
+  @media (max-width: 768px) {
+    button:not(.no-touch-target),
+    a:not(.no-touch-target),
+    input:not(.no-touch-target),
+    textarea:not(.no-touch-target),
+    select:not(.no-touch-target) {
+      min-height: 44px;
+    }
+
+    button:not(.no-touch-target),
+    a:not(.no-touch-target) {
+      min-width: 44px;
+    }
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    * {
+      border-color: currentColor !important;
+    }
+  }
+
+  /* Semantic text colors */
   .text-primary {
-    @apply text-neutral-900 dark:text-neutral-100;
+    @apply text-foreground dark:text-foreground-dark;
   }
 
   .text-secondary {
-    @apply text-neutral-600 dark:text-neutral-400;
+    @apply text-foreground-secondary dark:text-foreground-dark-secondary;
   }
 
   .text-muted {
-    @apply text-neutral-500 dark:text-neutral-500;
+    @apply text-foreground-muted dark:text-foreground-dark-muted;
   }
 
+  /* Semantic background colors */
   .bg-card {
-    @apply bg-white dark:bg-neutral-900;
+    @apply bg-background dark:bg-background-dark-secondary;
   }
 
   .bg-muted {
-    @apply bg-neutral-50 dark:bg-neutral-800;
+    @apply bg-background-muted dark:bg-background-dark-muted;
   }
 
   .border-subtle {
-    @apply border-neutral-200 dark:border-neutral-700;
+    @apply border-border dark:border-border-dark;
   }
 
   /* Border Radius System */
@@ -114,5 +206,51 @@
 
   .radius-full {
     @apply rounded-full; /* 50% - Pills, circular elements */
+  }
+
+  /* Uniform Hover States */
+  .hover-interactive {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .hover-lift {
+    @apply hover-interactive hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  .hover-scale {
+    @apply hover-interactive hover:scale-105;
+  }
+
+  .hover-icon {
+    @apply hover-interactive hover:text-primary-600 dark:hover:text-primary-400;
+  }
+
+  .hover-icon-scale {
+    @apply hover-interactive hover:scale-110 hover:text-primary-600 dark:hover:text-primary-400;
+  }
+
+  .hover-wiggle {
+    @apply hover-interactive hover:animate-wiggle hover:text-primary-600 dark:hover:text-primary-400;
+  }
+
+  .hover-card {
+    @apply hover-interactive hover:-translate-y-1 hover:shadow-xl hover:shadow-primary-500/10 dark:hover:shadow-primary-500/20;
+  }
+
+  /* Uniform Icon Sizing */
+  .icon-sm {
+    @apply size-4;
+  }
+
+  .icon-md {
+    @apply size-5;
+  }
+
+  .icon-lg {
+    @apply size-6;
+  }
+
+  .icon-xl {
+    @apply size-7;
   }
 }

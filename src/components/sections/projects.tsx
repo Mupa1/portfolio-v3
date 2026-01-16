@@ -1,10 +1,10 @@
 "use client";
 
+import { Github, ExternalLink } from "lucide-react";
 import { motion } from "motion/react";
 import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 import { useState } from "react";
-import { FiGithub, FiExternalLink } from "react-icons/fi";
 
 import { projects } from "@/data/projects";
 import { trackButtonClick, trackExternalLink } from "@/lib/analytics";
@@ -52,6 +52,7 @@ const Projects = ({ itemsPerPage = 8 }: ProjectsProps) => {
     <section
       id="projects"
       className="flex-center min-h-screen w-full snap-start snap-always py-12 sm:py-20"
+      aria-labelledby="projects-title"
     >
       <div className="w-full max-w-7xl">
         <div className="section-padding-x mx-auto px-6">
@@ -62,10 +63,10 @@ const Projects = ({ itemsPerPage = 8 }: ProjectsProps) => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mb-8 text-center"
           >
-            <h3>{t("projects")}</h3>
+            <h3 id="projects-title">{t("projects")}</h3>
           </motion.div>
 
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+          <div className="grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-2">
             {displayedProjects.map((project, index) => (
               <motion.article
                 key={project.id}
@@ -73,18 +74,22 @@ const Projects = ({ itemsPerPage = 8 }: ProjectsProps) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false }}
                 transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-                className="group relative overflow-hidden rounded-xl bg-white shadow-xl transition-all duration-300 hover:shadow-2xl dark:bg-neutral-900"
+                className="bg-neutral-50 group relative overflow-hidden rounded-2xl border border-neutral-200 shadow-lg hover-card focus-within:ring-2 focus-within:ring-primary-600 focus-within:ring-offset-2 dark:border-border-dark/50 dark:bg-background-dark-secondary/80 dark:focus-within:ring-offset-background-dark"
+                aria-labelledby={`project-title-${project.id}`}
               >
-                <div className="relative h-64 overflow-hidden">
+                <div className="relative h-48 overflow-hidden sm:h-64">
                   <Image
                     src={project.image}
-                    alt={project.title}
+                    alt={`${project.title} project screenshot`}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    loading="lazy"
+                    quality={75}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
 
-                  <div className="absolute right-4 top-4 flex gap-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <div className="absolute right-2 top-2 flex gap-2 opacity-100 transition-all duration-300 sm:right-4 sm:top-4">
                     {project.link && (
                       <a
                         href={project.link}
@@ -93,9 +98,10 @@ const Projects = ({ itemsPerPage = 8 }: ProjectsProps) => {
                         onClick={() =>
                           handleProjectLinkClick(project.link, project.title)
                         }
-                        className="flex size-10 items-center justify-center rounded-full bg-white/90 text-neutral-900 shadow-lg transition-colors hover:bg-white"
+                        aria-label={`${t("Accessibility.viewLiveDemo")} ${project.title}`}
+                        className="group relative flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full bg-white/95 text-neutral-900 backdrop-blur-sm shadow-lg shadow-primary-500/10 transition-all duration-300 hover:rotate-3 hover:bg-white hover:shadow-xl hover:shadow-primary-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 dark:bg-background-dark-secondary/95 dark:text-foreground-dark dark:shadow-primary-500/10 dark:hover:shadow-primary-500/20 dark:focus-visible:ring-offset-background-dark"
                       >
-                        <FiExternalLink className="size-4" />
+                        <ExternalLink className="icon-sm transition-transform duration-300 group-hover:rotate-3 group-hover:scale-110" aria-hidden="true" />
                       </a>
                     )}
                     {project.github && (
@@ -106,28 +112,30 @@ const Projects = ({ itemsPerPage = 8 }: ProjectsProps) => {
                         onClick={() =>
                           handleGitHubClick(project.github, project.title)
                         }
-                        className="flex size-10 items-center justify-center rounded-full bg-white/90 text-neutral-900 shadow-lg transition-colors hover:bg-white"
+                        aria-label={`${t("Accessibility.viewSourceCode")} ${project.title}`}
+                        className="group relative flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full bg-white/95 text-neutral-900 backdrop-blur-sm shadow-lg shadow-primary-500/10 transition-all duration-300 hover:rotate-3 hover:bg-white hover:shadow-xl hover:shadow-primary-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 dark:bg-background-dark-secondary/95 dark:text-foreground-dark dark:shadow-primary-500/10 dark:hover:shadow-primary-500/20 dark:focus-visible:ring-offset-background-dark"
                       >
-                        <FiGithub className="size-4" />
+                        <Github className="icon-sm transition-transform duration-300 group-hover:rotate-3 group-hover:scale-110" aria-hidden="true" />
                       </a>
                     )}
                   </div>
                 </div>
 
-                <div className="p-6">
-                  <h4 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100">
+                <div className="p-5 sm:p-6">
+                  <h4 id={`project-title-${project.id}`} className="text-lg font-bold text-neutral-900 dark:text-foreground-dark sm:text-xl">
                     {project.title}
                   </h4>
-                  <p className="mt-3 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+                  <p className="mt-3 text-sm leading-relaxed text-neutral-700 dark:text-foreground-dark-secondary">
                     {project.description[locale]}
                   </p>
 
                   {project.techStack && (
-                    <div className="mt-4 flex flex-wrap gap-2">
+                    <div className="mt-4 flex flex-wrap gap-2" role="list" aria-label={t("Accessibility.technologiesUsed")}>
                       {project.techStack.map((tech) => (
                         <span
                           key={tech}
-                          className="rounded-md bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300"
+                          role="listitem"
+                          className="rounded-lg border border-primary-100 bg-gradient-to-r from-primary-50 to-accent-50 px-3 py-1 text-xs font-semibold text-primary-700 dark:border-primary-900/50 dark:from-primary-950/30 dark:to-accent-950/30 dark:text-primary-300"
                         >
                           {tech}
                         </span>
@@ -152,12 +160,23 @@ const Projects = ({ itemsPerPage = 8 }: ProjectsProps) => {
               <button
                 onClick={loadMore}
                 disabled={isLoading}
-                className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 px-8 py-4 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:from-blue-700 hover:to-blue-800 hover:shadow-xl disabled:opacity-50 dark:from-blue-500 dark:to-blue-600 dark:hover:from-blue-600 dark:hover:to-blue-700"
+                aria-label={isLoading ? t("Projects.loading") : t("Projects.loadMore")}
+                aria-busy={isLoading}
+                className="gradient-primary group relative overflow-hidden rounded-xl px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary-500/25 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary-500/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:shadow-primary-500/20 dark:hover:shadow-primary-500/30 dark:focus-visible:ring-offset-background-dark sm:px-8 sm:py-4"
               >
                 <span className="relative z-10">
-                  {isLoading ? t("Projects.loading") : t("Projects.loadMore")}
+                  {isLoading ? (
+                    <>
+                      <span className="sr-only">{t("Projects.loading")}</span>
+                      <span aria-hidden="true">{t("Projects.loading")}</span>
+                    </>
+                  ) : (
+                    t("Projects.loadMore")
+                  )}
                 </span>
+                {!isLoading && (
                 <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+                )}
               </button>
             </motion.div>
           )}

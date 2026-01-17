@@ -49,7 +49,7 @@ const Navlinks = ({
       // Focus the section for better accessibility
       element.setAttribute("tabIndex", "-1");
       element.focus({ preventScroll: true });
-      
+
       window.scrollTo({
         top: offsetPosition,
         behavior: "smooth",

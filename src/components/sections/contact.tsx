@@ -282,16 +282,16 @@ const Contact = () => {
                   aria-busy={serverState.submitting}
                 >
                   <span className="relative z-10 flex items-center justify-center">
-                    {serverState.submitting ? (
-                      <>
+                  {serverState.submitting ? (
+                    <>
                               <Send className="icon-sm mr-2 animate-spin" aria-hidden="true" />
                         <span className="font-semibold">{t("Contact.sending")}</span>
-                      </>
-                    ) : (
-                      <>
+                    </>
+                  ) : (
+                    <>
                               <Send className="icon-sm mr-2 transition-transform group-hover:translate-x-1" aria-hidden="true" />
                         <span className="font-semibold">{t("Contact.send")}</span>
-                      </>
+                    </>
                     )}
                   </span>
                   {!serverState.submitting && (

@@ -50,7 +50,7 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false }}
                   transition={{ duration: 0.6, delay: 0.6 }}
-                  className="hover-card group relative flex flex-col items-center gap-6 rounded-2xl border-2 border-neutral-200 bg-white p-6 text-center shadow-lg shadow-neutral-200/50 transition-all duration-300 focus-within:ring-2 focus-within:ring-primary-600 focus-within:ring-offset-2 hover:border-primary-300 hover:shadow-xl hover:shadow-primary-500/10 dark:border-border-dark/50 dark:bg-background-dark-secondary/80 dark:shadow-background-dark-secondary/20 dark:focus-within:ring-offset-background-dark dark:hover:border-primary-500 dark:hover:shadow-primary-500/20 sm:p-8"
+                  className="hover-card group relative flex flex-col items-center gap-6 rounded-2xl border border-neutral-200 bg-neutral-50 p-6 text-center shadow-lg transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 dark:border-border-dark/50 dark:bg-background-dark-secondary/80 dark:focus-visible:ring-offset-background-dark sm:p-8"
                   aria-labelledby="about-card-frontend"
                   tabIndex={0}
                 >
@@ -83,7 +83,7 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false }}
                   transition={{ duration: 0.6, delay: 0.7 }}
-                  className="hover-card group relative flex flex-col items-center gap-6 rounded-2xl border-2 border-neutral-200 bg-white p-6 text-center shadow-lg shadow-neutral-200/50 transition-all duration-300 focus-within:ring-2 focus-within:ring-primary-600 focus-within:ring-offset-2 hover:border-primary-300 hover:shadow-xl hover:shadow-primary-500/10 dark:border-border-dark/50 dark:bg-background-dark-secondary/80 dark:shadow-background-dark-secondary/20 dark:focus-within:ring-offset-background-dark dark:hover:border-primary-500 dark:hover:shadow-primary-500/20 sm:p-8"
+                  className="hover-card group relative flex flex-col items-center gap-6 rounded-2xl border border-neutral-200 bg-neutral-50 p-6 text-center shadow-lg transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 dark:border-border-dark/50 dark:bg-background-dark-secondary/80 dark:focus-visible:ring-offset-background-dark sm:p-8"
                   aria-labelledby="about-card-backend"
                   tabIndex={0}
                 >
@@ -116,7 +116,7 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false }}
                   transition={{ duration: 0.6, delay: 1.1 }}
-                  className="hover-card group relative flex flex-col items-center gap-6 rounded-2xl border-2 border-neutral-200 bg-white p-6 text-center shadow-lg shadow-neutral-200/50 transition-all duration-300 focus-within:ring-2 focus-within:ring-primary-600 focus-within:ring-offset-2 hover:border-primary-300 hover:shadow-xl hover:shadow-primary-500/10 dark:border-border-dark/50 dark:bg-background-dark-secondary/80 dark:shadow-background-dark-secondary/20 dark:focus-within:ring-offset-background-dark dark:hover:border-primary-500 dark:hover:shadow-primary-500/20 sm:p-8"
+                  className="hover-card group relative flex flex-col items-center gap-6 rounded-2xl border border-neutral-200 bg-neutral-50 p-6 text-center shadow-lg transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 dark:border-border-dark/50 dark:bg-background-dark-secondary/80 dark:focus-visible:ring-offset-background-dark sm:p-8"
                   aria-labelledby="about-card-fullstack"
                   tabIndex={0}
                 >
@@ -149,7 +149,7 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false }}
                   transition={{ duration: 0.6, delay: 0.9 }}
-                  className="hover-card group relative flex flex-col items-center gap-6 rounded-2xl border-2 border-neutral-200 bg-white p-6 text-center shadow-lg shadow-neutral-200/50 transition-all duration-300 focus-within:ring-2 focus-within:ring-primary-600 focus-within:ring-offset-2 hover:border-primary-300 hover:shadow-xl hover:shadow-primary-500/10 dark:border-border-dark/50 dark:bg-background-dark-secondary/80 dark:shadow-background-dark-secondary/20 dark:focus-within:ring-offset-background-dark dark:hover:border-primary-500 dark:hover:shadow-primary-500/20 sm:p-8"
+                  className="hover-card group relative flex flex-col items-center gap-6 rounded-2xl border border-neutral-200 bg-neutral-50 p-6 text-center shadow-lg transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 dark:border-border-dark/50 dark:bg-background-dark-secondary/80 dark:focus-visible:ring-offset-background-dark sm:p-8"
                   aria-labelledby="about-card-devops"
                   tabIndex={0}
                 >
@@ -181,12 +181,12 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false }}
                   transition={{ duration: 0.6, delay: 0.8 }}
-                  className="hover-card group relative flex flex-col items-center gap-6 rounded-2xl border-2 border-neutral-200 bg-white p-6 text-center shadow-lg shadow-neutral-200/50 transition-all duration-300 focus-within:ring-2 focus-within:ring-primary-600 focus-within:ring-offset-2 hover:border-primary-300 hover:shadow-xl hover:shadow-primary-500/10 dark:border-border-dark/50 dark:bg-background-dark-secondary/80 dark:shadow-background-dark-secondary/20 dark:focus-within:ring-offset-background-dark dark:hover:border-primary-500 dark:hover:shadow-primary-500/20 sm:p-8"
+                  className="hover-card group relative flex flex-col items-center gap-6 rounded-2xl border border-neutral-200 bg-neutral-50 p-6 text-center shadow-lg transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 dark:border-border-dark/50 dark:bg-background-dark-secondary/80 dark:focus-visible:ring-offset-background-dark sm:p-8"
                   aria-labelledby="about-card-database"
                   tabIndex={0}
                 >
                   <div
-                    className="rounded-xl bg-gradient-to-br from-primary-600 to-primary-700 p-4 shadow-lg shadow-primary-500/20 transition-transform duration-300 group-hover:rotate-3 group-hover:scale-110"
+                    className="rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 p-4 shadow-lg shadow-primary-500/20 transition-transform duration-300 group-hover:rotate-3 group-hover:scale-110"
                     aria-hidden="true"
                   >
                     <Database className="icon-lg text-white" />
@@ -214,7 +214,7 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false }}
                   transition={{ duration: 0.6, delay: 1.0 }}
-                  className="hover-card group relative flex flex-col items-center gap-6 rounded-2xl border-2 border-neutral-200 bg-white p-6 text-center shadow-lg shadow-neutral-200/50 transition-all duration-300 focus-within:ring-2 focus-within:ring-primary-600 focus-within:ring-offset-2 hover:border-primary-300 hover:shadow-xl hover:shadow-primary-500/10 dark:border-border-dark/50 dark:bg-background-dark-secondary/80 dark:shadow-background-dark-secondary/20 dark:focus-within:ring-offset-background-dark dark:hover:border-primary-500 dark:hover:shadow-primary-500/20 sm:p-8"
+                  className="hover-card group relative flex flex-col items-center gap-6 rounded-2xl border border-neutral-200 bg-neutral-50 p-6 text-center shadow-lg transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 dark:border-border-dark/50 dark:bg-background-dark-secondary/80 dark:focus-visible:ring-offset-background-dark sm:p-8"
                   aria-labelledby="about-card-ux"
                   tabIndex={0}
                 >

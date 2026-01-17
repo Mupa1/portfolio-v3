@@ -164,15 +164,15 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
         >
           <NextIntlClientProvider messages={messages}>
             <ErrorBoundary>
-              <SocialIconsVisibilityProvider>
+            <SocialIconsVisibilityProvider>
                 <SkipLink />
-                <Overlay />
-                <Navbar />
-                <FixedSocialIcons />
+              <Overlay />
+              <Navbar />
+              <FixedSocialIcons />
                 <main id="main-content" tabIndex={-1}>
                   {children}
                 </main>
-              </SocialIconsVisibilityProvider>
+            </SocialIconsVisibilityProvider>
             </ErrorBoundary>
           </NextIntlClientProvider>
         </ThemeProvider>

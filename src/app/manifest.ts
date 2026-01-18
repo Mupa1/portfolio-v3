@@ -8,8 +8,8 @@ export default function manifest(): MetadataRoute.Manifest {
       "Professional portfolio of Mupa M'mbetsa Nzaphila, Full Stack Engineer specializing in React, Next.js, and Node.js",
     start_url: "/",
     display: "standalone",
-    background_color: "#ffffff",
-    theme_color: "#000000",
+    background_color: "#f9fafb",
+    theme_color: "#4f46e5",
     icons: [
       {
         src: "/favicon.ico",

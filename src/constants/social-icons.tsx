@@ -10,12 +10,12 @@ export const socialIcons = [
   },
   {
     id: "linkedin",
-    icon: <RiLinkedinLine title="LinkedIn" />,
+    icon: <RiLinkedinLine />,
     href: "https://www.linkedin.com/in/mupa-nzaphila",
   },
   {
     id: "twitter",
-    icon: <FaXTwitter title="Twitter" />,
+    icon: <FaXTwitter />,
     href: "https://x.com/mupa_mmbetsa",
   },
 ];

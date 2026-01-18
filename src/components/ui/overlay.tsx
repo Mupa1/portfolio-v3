@@ -2,26 +2,44 @@
 
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { useState, useEffect } from "react";
 
 const Overlay = () => {
+  const t = useTranslations("Accessibility");
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(false);
-    }, 1500);
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, []);
 
   const overlayVariants = {
-    initial: { y: "0%" },
+    initial: { opacity: 1 },
     exit: {
+      opacity: 0,
       y: "-100%",
       transition: {
-        ease: [0.65, 0, 0.35, 1],
-        duration: 1.5,
+        ease: [0.65, 0, 0.35, 1] as [number, number, number, number],
+        duration: 1,
+        opacity: { duration: 0.3 },
+        y: { duration: 1, delay: 0.2 },
+      },
+    },
+  };
+
+  const logoVariants = {
+    initial: { opacity: 0, scale: 0.8, rotate: -180 },
+    animate: {
+      opacity: 1,
+      scale: 1,
+      rotate: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.34, 1.56, 0.64, 1] as [number, number, number, number],
       },
     },
   };
@@ -33,18 +51,26 @@ const Overlay = () => {
           initial="initial"
           exit="exit"
           variants={overlayVariants}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-neutral-950 dark:bg-neutral-100"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-neutral-950 dark:bg-neutral-50"
         >
-          <div className="animate-[spin_1s_linear_2] p-8 text-center">
-            <Image
-              src="/images/logo.svg"
-              width={36}
-              height={36}
-              alt="Site Logo"
-              className="invert dark:invert-0"
-              style={{ width: "auto", height: "auto" }}
-            />
-          </div>
+          <motion.div
+            initial="initial"
+            animate="animate"
+            variants={logoVariants}
+            className="relative"
+          >
+            <div className="absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-primary-500/20 via-secondary-500/20 to-accent-500/20 blur-2xl dark:from-primary-400/30 dark:via-secondary-400/30 dark:to-accent-400/30" />
+            <div className="p-8">
+              <Image
+                src="/images/logo.svg"
+                width={64}
+                height={64}
+                alt={t("mupaLogo")}
+                priority
+                className="drop-shadow-2xl"
+              />
+            </div>
+          </motion.div>
         </motion.div>
       )}
     </AnimatePresence>

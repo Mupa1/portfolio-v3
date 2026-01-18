@@ -5,44 +5,49 @@
   "contact": "KONTAKT",
   "home": "START",
   "about": "ÜBER MICH",
-  "experience": "ERFAHRUNG",
-  "education": "BILDUNG",
   "navigation": "Navigation",
   "Hero": {
     "frontend": "FULLSTACK-",
     "engineer": "ENTWICKLERIN",
-    "description": "Bereitstellung reaktionsschneller, skalierbarer und benutzerfreundlicher Webanwendungen durch die Kombination professioneller Frontend-Erfahrung mit Fullstack-Kenntnissen. Leidenschaft für sauberen Code, zugängliches Design und nahtlose Benutzererlebnisse.",
+    "description": "Fullstack-Entwicklerin mit über 3 Jahren Erfahrung in der Entwicklung schneller, barrierefreier und skalierbarer Webanwendungen mit Node.js, React, Next.js, JavaScript, und TypeScript. Nachweisliche Erfolge in Performance-Optimierung, komplexer API-Integration und der Umsetzung von Features, die von tausenden Nutzer*innen verwendet werden.",
     "viewProjects": "Projekte ansehen",
-    "contactMe": "Kontakt aufnehmen"
+    "contactMe": "Kontakt aufnehmen",
+    "downloadCV": "Lebenslauf herunterladen"
   },
   "About": {
     "title": "ÜBER MICH",
     "subtitle": "Fullstack-Entwicklerin",
-    "description": "Ich bin Mupa Nzaphila, ein Fullstack-Entwickler mit professioneller Frontend-Erfahrung und Fullstack-Schulung. Ich entwickle responsive, skalierbare und benutzerfreundliche Webanwendungen mit React, Next.js und Node.js und verwandle komplexe Probleme in intuitive Lösungen. Meine Leidenschaft gilt sauberem Code, durchdachtem Design und der Entwicklung von Produkten, die nicht nur funktionieren, sondern auch Nutzer begeistern.",
+    "description": "Ich bin Mupa M'mbetsa Nzaphila, Full-Stack-Entwicklerin mit starker professioneller Frontend-Erfahrung und fundiertem Full-Stack-Know-how. Ich entwickle responsive, skalierbare und benutzerfreundliche Webanwendungen mit React, Next.js und Node.js. Dabei lege ich großen Wert auf sauberen, wartbaren Code und darauf, komplexe Probleme in intuitive digitale Lösungen zu übersetzen. Themen wie Barrierefreiheit, Performance und durchdachtes UI-Design stehen für mich im Mittelpunkt - denn gute Produkte sollen nicht nur funktionieren, sondern sich auch gut anfühlen.",
     "whatIDo": "Was ich mache",
     "frontend": {
       "title": "Frontend-Entwicklung",
-      "description": "React, Next.js, TypeScript, Tailwind"
+      "description": "Erstellung responsiver, barrierefreier und leistungsstarker Benutzeroberflächen.",
+      "tech": "React · Next.js · JavaScript · TypeScript · Tailwind CSS"
     },
     "backend": {
       "title": "Backend-Entwicklung",
-      "description": "Node.js, APIs, Serverless"
+      "description": "Design und Implementierung von APIs und serverseitiger Logik.",
+      "tech": "Node.js · Express · REST APIs · GraphQL · Serverless Functions"
     },
     "database": {
-      "title": "Datenbank & Daten",
-      "description": "PostgreSQL, MongoDB, Prisma"
+      "title": "Datenbanken & Daten",
+      "description": "Arbeit mit strukturierten und unstrukturierten Daten.",
+      "tech": "SQL · MySQL · PostgreSQL · NoSQL · MongoDB"
     },
     "devops": {
       "title": "DevOps & Deployment",
-      "description": "AWS, Vercel, Docker, CI/CD"
+      "description": "Bereitstellung und Wartung produktionsreifer Anwendungen.",
+      "tech": "AWS · Vercel · Docker · CI/CD · Automatisierung"
     },
     "ux": {
       "title": "Benutzererfahrung",
-      "description": "Saubere, zugängliche Oberflächen"
+      "description": "Erstellung sauberer, intuitiver und barrierefreier Oberflächen mit Fokus auf die Nutzer.",
+      "focus": "Barrierefreiheit · Benutzerfreundlichkeit · Leistung"
     },
     "fullstack": {
-      "title": "Fullstack Lösungen",
-      "description": "End-to-End Entwicklung"
+      "title": "Fullstack-Lösungen",
+      "description": "Bereitstellung von End-to-End-Lösungen von der Konzeption bis zur Produktion.",
+      "approach": "Skalierbare Architektur · Sauberer Code · Reale Anwendungsfälle"
     }
   },
   "Projects": {
@@ -51,70 +56,50 @@
     "loadMore": "Mehr laden",
     "loading": "Lädt..."
   },
-  "Experience": {
-    "title": "BERUFSERFAHRUNG",
-    "independent": {
-      "company": "Eigenständige Projekte",
-      "position": "Fullstack-Entwicklung",
-      "period": "Jun 2024 – Gegenwart",
-      "achievements": [
-        "Entwicklung und Design von Fullstack-Anwendungen mit React, Next.js, Vue.js, Node.js und MongoDB",
-        "Entwicklung von Portfolio-Projekten wie E-Commerce-Produkt-Tracker und Wahlüberwachungssystem",
-        "Erweiterung der Backend-Expertise mit API-Integrationen, Authentifizierung und Datenbankmanagement",
-        "Kontinuierliche Verbesserung der Frontend-Fähigkeiten mit Fokus auf Performance, Barrierefreiheit und UX"
-      ]
-    },
-    "accure": {
-      "company": "Accure Battery Intelligence",
-      "position": "Frontend Engineer",
-      "period": "Okt 2023 – Mai 2024",
-      "achievements": [
-        "Optimierte Dashboards für große Datensätze und verbesserte Performance und Usability",
-        "Erstellte Datenvisualisierungen für 20+ Unternehmenskunden bei datengestützten Entscheidungen",
-        "Integrierte Backend-APIs ins Frontend und reduzierte Antwortzeiten für bessere UX"
-      ]
-    },
-    "heycar": {
-      "company": "Heycar",
-      "position": "Frontend Engineer",
-      "period": "Okt 2021 – Sep 2023",
-      "achievements": [
-        "Entwickelte Finanzrechner und Checkout-Tools für 100.000+ monatliche Benutzer",
-        "Implementierte responsives Design und steigerte mobile Engagement und geräteübergreifende Funktionalität",
-        "Arbeitete mit Backend-Teams zusammen zur API-Integration und Datenverarbeitungsoptimierung"
-      ]
-    }
-  },
-  "Education": {
-    "title": "BILDUNG & ZERTIFIKATE",
-    "subtitle": "Kontinuierliches Lernen und berufliche Weiterentwicklung",
-    "viewCertificate": "Zertifikat ansehen",
-    "google": {
-      "institution": "Google",
-      "program": "Google UX Design Zertifikat",
-      "period": "November 2024 – Februar 2025",
-      "description": "Umfassendes UX-Design-Programm mit Benutzerforschung, Wireframing, Prototyping und Usability-Testing. Expertise in Design Thinking, Barrierefreiheit und benutzerzentrierten digitalen Erfahrungen."
-    },
-    "microverse": {
-      "institution": "Microverse",
-      "program": "Fullstack-Webentwicklung",
-      "period": "Januar 2020 – Februar 2021",
-      "description": "Intensives Fullstack-Entwicklungsprogramm mit modernen Webtechnologien, Pair Programming und Remote-Kollaboration. Meisterte React, Ruby on Rails, PostgreSQL und agile Entwicklungsmethoden."
-    }
-  },
   "Contact": {
     "name": "Ihr Name",
     "email": "Ihre E-Mail",
     "message": "Ihre Nachricht",
     "send": "Nachricht senden",
     "sending": "Wird gesendet...",
-    "description": "Ich bin immer offen für neue Projekte oder Möglichkeiten - zögern Sie nicht, sich zu melden!"
+    "description": "Ich bin immer offen für neue Projekte oder Möglichkeiten - zögern Sie nicht, sich zu melden!",
+    "validation": {
+      "nameRequired": "Name ist erforderlich",
+      "nameMin": "Name muss mindestens 2 Zeichen lang sein",
+      "emailRequired": "E-Mail ist erforderlich",
+      "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+      "messageRequired": "Nachricht ist erforderlich",
+      "messageMin": "Nachricht muss mindestens 10 Zeichen lang sein"
+    },
+    "success": "Nachricht erfolgreich gesendet!",
+    "error": "Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut."
   },
   "Footer": {
     "navigation": "Navigation",
     "social": "Social Media",
     "contact": "Kontakt",
-    "email": "E-Mail"
+    "email": "E-Mail",
+    "downloadCV": "Lebenslauf herunterladen"
+  },
+  "Accessibility": {
+    "skipToMain": "Zum Hauptinhalt springen",
+    "mainNavigation": "Hauptnavigation",
+    "navigationControls": "Navigationssteuerung",
+    "homeLink": "Mupa Nzaphila - Startseite",
+    "siteFooter": "Seitenfuß",
+    "socialMediaLinks": "Social-Media-Links",
+    "fixedSocialLinks": "Feste Social-Media-Links",
+    "contactForm": "Kontaktformular",
+    "contactFormDescription": "Füllen Sie das Formular unten aus, um eine Nachricht zu senden. Alle Felder sind erforderlich.",
+    "required": "erforderlich",
+    "technologiesUsed": "Verwendete Technologien",
+    "mupaLogo": "Mupa Logo",
+    "viewLiveDemo": "Live-Demo von ansehen",
+    "viewSourceCode": "Quellcode von auf GitHub ansehen",
+    "navigateToProjects": "Zu Projekten navigieren",
+    "linkedIn": "LinkedIn",
+    "twitter": "Twitter",
+    "github": "GitHub"
   },
   "metadata": {
     "title": "Mupa M'mbetsa Nzaphila | Fullstack-Entwicklerin & Entwickler Portfolio",

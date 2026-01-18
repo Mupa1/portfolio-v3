@@ -1,7 +1,6 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { motion } from "framer-motion";
 import {
   CheckCircle,
   Mail,
@@ -10,6 +9,7 @@ import {
   User,
   XCircle,
 } from "lucide-react";
+import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -35,6 +35,17 @@ const Contact = () => {
     submitting: false,
   });
 
+  // Helper function to safely get validation error messages
+  const getValidationError = (errorKey: string | undefined): string => {
+    if (!errorKey) return "";
+    try {
+      const translationKey = `Contact.validation.${errorKey}`;
+      return t(translationKey as Parameters<typeof t>[0]);
+    } catch {
+      return errorKey;
+    }
+  };
+
   const {
     register,
     handleSubmit,
@@ -42,6 +53,7 @@ const Contact = () => {
     formState: { errors },
   } = useForm<z.infer<typeof ContactFormValidation>>({
     resolver: zodResolver(ContactFormValidation),
+    mode: "onBlur", // Validate on blur for better UX
   });
 
   const handleServerResponse = (
@@ -79,16 +91,16 @@ const Contact = () => {
         await response.json();
         reset();
         trackFormSubmission("contact_form");
-        handleServerResponse(true, "Message sent successfully!", null);
+        handleServerResponse(true, t("Contact.success"), null);
       } else {
         const data = await response.json();
-        throw new Error(data.error || "Something went wrong");
+        throw new Error(data.error || t("Contact.error"));
       }
     } catch (err) {
       if (err instanceof Error) {
-        handleServerResponse(false, err.message, null);
+        handleServerResponse(false, err.message || t("Contact.error"), null);
       } else {
-        handleServerResponse(false, "An unknown error occurred", null);
+        handleServerResponse(false, t("Contact.error"), null);
       }
     }
   };
@@ -97,6 +109,7 @@ const Contact = () => {
     <section
       id="contact"
       className="flex-center min-h-screen w-full snap-start snap-always py-12 sm:py-20"
+      aria-labelledby="contact-title"
     >
       <div className="w-full max-w-7xl">
         <div className="section-padding-x mx-auto px-6">
@@ -105,10 +118,10 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="mb-16 text-center"
+            className="mb-12 text-center sm:mb-16"
           >
-            <h3>{t("contact")}</h3>
-            <p className="mx-auto max-w-2xl text-lg text-neutral-600 dark:text-neutral-400">
+            <h3 id="contact-title">{t("contact")}</h3>
+            <p className="mx-auto max-w-2xl px-4 text-neutral-700 dark:text-foreground-dark-secondary sm:px-6">
               {t("Contact.description")}
             </p>
           </motion.div>
@@ -120,33 +133,50 @@ const Contact = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="mx-auto max-w-2xl"
           >
-            <div className="rounded-2xl bg-gradient-to-br from-neutral-50 to-neutral-100 p-8 shadow-xl dark:from-neutral-900 dark:to-neutral-800">
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            <div className="bg-neutral-50 rounded-3xl border border-neutral-200 p-6 shadow-2xl shadow-primary-500/10 dark:border-border-dark/50 dark:bg-background-dark-secondary/70 dark:shadow-primary-500/10 sm:p-8">
+              <form
+                onSubmit={handleSubmit(onSubmit)}
+                className="space-y-6"
+                aria-label={t("Accessibility.contactForm")}
+                noValidate
+                aria-describedby="contact-form-description"
+              >
+                <p id="contact-form-description" className="sr-only">
+                  {t("Accessibility.contactFormDescription")}
+                </p>
                 <div className="space-y-2">
                   <label
                     htmlFor="name"
-                    className="flex items-center gap-2 text-sm font-semibold text-neutral-700 dark:text-neutral-300"
+                    className="flex items-center gap-2 text-sm font-semibold text-neutral-700 dark:text-foreground-dark-secondary"
                   >
-                    <User className="size-4" />
+                          <User className="icon-sm" aria-hidden="true" />
                     {t("Contact.name")}
+                    <span className="text-destructive" aria-label={t("Accessibility.required")}>
+                      *
+                    </span>
                   </label>
                   <div>
                     <Input
                       id="name"
                       type="text"
                       {...register("name")}
-                      className="h-12 border-0 bg-white px-4 shadow-sm transition-all duration-200 focus:shadow-md dark:bg-neutral-800"
-                      placeholder="Your full name"
+                      aria-invalid={errors.name ? "true" : "false"}
+                      aria-describedby={errors.name ? "name-error" : undefined}
+                      className="bg-white min-h-[44px] border border-neutral-300 px-4 shadow-sm transition-all duration-200 focus:border-primary-600 focus:shadow-md focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 dark:border-border-dark/50 dark:bg-background-dark-muted/80 dark:focus:border-primary-400 dark:focus-visible:ring-offset-background-dark"
+                      placeholder={t("Contact.name")}
+                      autoComplete="name"
                     />
                   </div>
                   {errors.name && (
                     <motion.p
+                      id="name-error"
+                      role="alert"
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="flex items-center gap-1 text-sm text-red-500"
+                      className="flex items-center gap-1 text-sm text-destructive"
                     >
-                      <XCircle className="size-4" />
-                      {errors.name.message}
+                            <XCircle className="icon-sm" aria-hidden="true" />
+                      {getValidationError(errors.name.message)}
                     </motion.p>
                   )}
                 </div>
@@ -154,28 +184,36 @@ const Contact = () => {
                 <div className="space-y-2">
                   <label
                     htmlFor="email"
-                    className="flex items-center gap-2 text-sm font-semibold text-neutral-700 dark:text-neutral-300"
+                    className="flex items-center gap-2 text-sm font-semibold text-neutral-700 dark:text-foreground-dark-secondary"
                   >
-                    <Mail className="size-4" />
+                          <Mail className="icon-sm" aria-hidden="true" />
                     {t("Contact.email")}
+                    <span className="text-destructive" aria-label={t("Accessibility.required")}>
+                      *
+                    </span>
                   </label>
                   <div>
                     <Input
                       id="email"
                       type="email"
                       {...register("email")}
-                      className="h-12 border-0 bg-white px-4 shadow-sm transition-all duration-200 focus:shadow-md dark:bg-neutral-800"
+                      aria-invalid={errors.email ? "true" : "false"}
+                      aria-describedby={errors.email ? "email-error" : undefined}
+                      autoComplete="email"
+                      className="bg-white min-h-[44px] border border-neutral-300 px-4 shadow-sm transition-all duration-200 focus:border-primary-600 focus:shadow-md focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 dark:border-border-dark/50 dark:bg-background-dark-muted/80 dark:focus:border-primary-400 dark:focus-visible:ring-offset-background-dark"
                       placeholder="your.email@example.com"
                     />
                   </div>
                   {errors.email && (
                     <motion.p
+                      id="email-error"
+                      role="alert"
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="flex items-center gap-1 text-sm text-red-500"
+                      className="flex items-center gap-1 text-sm text-destructive"
                     >
-                      <XCircle className="size-4" />
-                      {errors.email.message}
+                            <XCircle className="icon-sm" aria-hidden="true" />
+                      {getValidationError(errors.email.message)}
                     </motion.p>
                   )}
                 </div>
@@ -183,65 +221,81 @@ const Contact = () => {
                 <div className="space-y-2">
                   <label
                     htmlFor="message"
-                    className="flex items-center gap-2 text-sm font-semibold text-neutral-700 dark:text-neutral-300"
+                    className="flex items-center gap-2 text-sm font-semibold text-neutral-700 dark:text-foreground-dark-secondary"
                   >
-                    <MessageSquare className="size-4" />
+                          <MessageSquare className="icon-sm" aria-hidden="true" />
                     {t("Contact.message")}
+                    <span className="text-destructive" aria-label={t("Accessibility.required")}>
+                      *
+                    </span>
                   </label>
                   <div>
                     <Textarea
                       id="message"
                       {...register("message")}
-                      className="border-0 bg-white px-4 py-3 shadow-sm transition-all duration-200 focus:shadow-md dark:bg-neutral-800"
-                      placeholder="Tell me about your project, ideas, or just say hello..."
+                      aria-invalid={errors.message ? "true" : "false"}
+                      aria-describedby={errors.message ? "message-error" : undefined}
+                      className="bg-white min-h-[120px] border border-neutral-300 px-4 py-3 shadow-sm transition-all duration-200 focus:border-primary-600 focus:shadow-md focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 dark:border-border-dark/50 dark:bg-background-dark-muted/80 dark:focus:border-primary-400 dark:focus-visible:ring-offset-background-dark"
+                      placeholder={t("Contact.message")}
+                      rows={6}
                     />
                   </div>
                   {errors.message && (
                     <motion.p
+                      id="message-error"
+                      role="alert"
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="flex items-center gap-1 text-sm text-red-500"
+                      className="flex items-center gap-1 text-sm text-destructive"
                     >
-                      <XCircle className="size-4" />
-                      {errors.message.message}
+                            <XCircle className="icon-sm" aria-hidden="true" />
+                      {getValidationError(errors.message.message)}
                     </motion.p>
                   )}
                 </div>
 
                 {serverState.status && (
                   <motion.div
+                    role="alert"
+                    aria-live="polite"
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     className={`flex items-center gap-2 rounded-md p-3 text-sm font-medium ${
                       serverState.status.ok
-                        ? "bg-green-50 text-green-700 dark:bg-green-900/20 dark:text-green-400"
-                        : "bg-red-50 text-red-700 dark:bg-red-900/20 dark:text-red-400"
+                        ? "bg-success/10 text-success-dark dark:bg-success/20 dark:text-success-light"
+                        : "bg-destructive/10 text-destructive-dark dark:bg-destructive/20 dark:text-destructive-light"
                     }`}
                   >
                     {serverState.status.ok ? (
-                      <CheckCircle className="size-4" />
+                            <CheckCircle className="icon-sm" aria-hidden="true" />
                     ) : (
-                      <XCircle className="size-4" />
+                            <XCircle className="icon-sm" aria-hidden="true" />
                     )}
-                    {serverState.status.msg}
+                    <span>{serverState.status.msg}</span>
                   </motion.div>
                 )}
 
                 <Button
                   type="submit"
-                  className="group h-12 w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg transition-all duration-200 hover:from-blue-700 hover:to-blue-800 hover:shadow-xl disabled:opacity-50 dark:from-blue-500 dark:to-blue-600 dark:text-blue-100 dark:hover:from-blue-600 dark:hover:to-blue-700"
+                  className="gradient-primary group relative min-h-[48px] w-full overflow-hidden rounded-xl text-white shadow-lg shadow-primary-500/25 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-primary-500/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:shadow-primary-500/20 dark:hover:shadow-primary-500/30 dark:focus-visible:ring-offset-background-dark"
                   disabled={serverState.submitting}
+                  aria-busy={serverState.submitting}
                 >
+                  <span className="relative z-10 flex items-center justify-center">
                   {serverState.submitting ? (
                     <>
-                      <Send className="mr-2 size-4 animate-spin" />
-                      {t("Contact.sending")}
+                              <Send className="icon-sm mr-2 animate-spin" aria-hidden="true" />
+                        <span className="font-semibold">{t("Contact.sending")}</span>
                     </>
                   ) : (
                     <>
-                      <Send className="mr-2 size-4 transition-transform group-hover:translate-x-1" />
-                      {t("Contact.send")}
+                              <Send className="icon-sm mr-2 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                        <span className="font-semibold">{t("Contact.send")}</span>
                     </>
+                    )}
+                  </span>
+                  {!serverState.submitting && (
+                    <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
                   )}
                 </Button>
               </form>

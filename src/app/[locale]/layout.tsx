@@ -6,8 +6,10 @@ import { getMessages, getTranslations } from "next-intl/server";
 
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 import Navbar from "@/components/navigation";
+import ErrorBoundary from "@/components/ui/error-boundary";
 import FixedSocialIcons from "@/components/ui/fixed-social-icons";
 import Overlay from "@/components/ui/overlay";
+import SkipLink from "@/components/ui/skip-link";
 import { SocialIconsVisibilityProvider } from "@/context/SocialIconsVisibility";
 import ThemeProvider from "@/context/Theme";
 import { routing } from "@/i18n/routing";
@@ -80,7 +82,10 @@ export async function generateMetadata({
       },
     },
     icons: {
-      icon: "/favicon.ico",
+      icon: [
+        { url: "/icon.svg", type: "image/svg+xml", sizes: "32x32" },
+        { url: "/favicon.ico", sizes: "16x16 32x32" },
+      ],
     },
   };
 }
@@ -153,17 +158,22 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="dark"
+          enableSystem={false}
           disableTransitionOnChange
         >
           <NextIntlClientProvider messages={messages}>
+            <ErrorBoundary>
             <SocialIconsVisibilityProvider>
+                <SkipLink />
               <Overlay />
               <Navbar />
               <FixedSocialIcons />
-              <main>{children}</main>
+                <main id="main-content" tabIndex={-1}>
+                  {children}
+                </main>
             </SocialIconsVisibilityProvider>
+            </ErrorBoundary>
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>

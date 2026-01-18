@@ -2,25 +2,26 @@
 
 ![Portfolio Screenshot](/public/images/screenshot.png)
 
-A modern, responsive portfolio website built with Next.js 15, TypeScript, and Tailwind CSS. This portfolio showcases my work and skills with an interactive user interface.
+A modern, responsive portfolio website built with Next.js 16, TypeScript, and Tailwind CSS. This portfolio showcases my work and skills with an interactive user interface.
 
 ## 🚀 Features
 
-- 🌐 Internationalization support with next-intl
-- 🎨 Modern UI with Tailwind CSS resusable components
+- 🌐 Internationalization support (English/German) with next-intl
+- 🎨 Modern UI with Tailwind CSS and reusable components
 - 🌓 Dark/Light mode support
 - 📱 Fully responsive design
-- ⚡ Fast performance with Next.js 15
-- 🎭 Smooth animations with Tailwind CSS and Motion
+- ⚡ Fast performance with Next.js 16 and Turbopack
+- 🎭 Smooth animations with Motion
 - 🔍 SEO optimized
+- ♿ Accessible design with keyboard navigation and ARIA labels
 - 📝 Form handling with React Hook Form and Zod validation
 
 ## 🛠️ Tech Stack
 
-- **Framework:** Next.js 15
+- **Framework:** Next.js 16
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS
-- **UI Components:** Shadcn
+- **UI Components:** Shadcn/ui (Radix UI)
 - **Form Handling:** React Hook Form + Zod
 - **Animations:** Motion
 - **Internationalization:** next-intl
@@ -51,33 +52,11 @@ npm run dev
 
 ## 🏗️ Available Scripts
 
-- `npm run dev` - Start the development server with Turbo mode
+- `npm run dev` - Start the development server with Turbopack
 - `npm run build` - Build the application for production
 - `npm run start` - Start the production server
 - `npm run lint` - Run ESLint
 - `npm run lint:fix` - Fix ESLint issues automatically
-
-## 🎨 Project Structure
-
-```
-portfolio-v3/
-├── src/              # Source files
-├── public/           # Static files
-├── messages/         # Internationalization messages
-├── components/       # React components
-├── styles/          # Global styles
-└── ...
-```
-
-## 🔧 Configuration
-
-The project uses several configuration files:
-
-- `next.config.ts` - Next.js configuration
-- `tailwind.config.ts` - Tailwind CSS configuration
-- `tsconfig.json` - TypeScript configuration
-- `.eslintrc.json` - ESLint configuration
-- `postcss.config.mjs` - PostCSS configuration
 
 ## 📝 License
 

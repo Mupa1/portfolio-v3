@@ -1,30 +1,14 @@
 "use client";
 
-import { Download } from "lucide-react";
-import { useLocale, useTranslations } from "next-intl";
+import { Mail } from "lucide-react";
+import { useTranslations } from "next-intl";
 import React from "react";
 
 import { Button } from "@/components/ui/button";
-import { trackButtonClick, trackExternalLink } from "@/lib/analytics";
+import { trackButtonClick } from "@/lib/analytics";
 
 const Hero = () => {
   const t = useTranslations();
-  const locale = useLocale();
-
-  const cvFile =
-    locale === "de"
-      ? "/images/Mupa-Mmbetsa-Nzaphila-Lebenslauf.pdf"
-      : "/images/Mupa-Mmbetsa-Nzaphila-Resume.pdf";
-
-  const cvFileName =
-    locale === "de"
-      ? "Mupa-Mmbetsa-Nzaphila-Lebenslauf.pdf"
-      : "Mupa-Mmbetsa-Nzaphila-Resume.pdf";
-
-  const handleCVDownload = () => {
-    trackExternalLink(`CV Download - ${cvFileName}`);
-    trackButtonClick("download_cv", "hero_section");
-  };
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -74,20 +58,19 @@ const Hero = () => {
           </span>
           <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
         </Button>
-        <a
-          href={cvFile}
-          download={cvFileName}
-          onClick={handleCVDownload}
-          aria-label={`${t("Hero.downloadCV")} - ${cvFileName}`}
-          className="group relative flex min-h-[48px] w-full min-w-[160px] touch-manipulation items-center justify-center gap-2 overflow-hidden rounded-xl border border-neutral-300 bg-neutral-50 px-6 text-sm font-semibold text-neutral-900 shadow-md backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:border-primary-600 hover:bg-white hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 dark:border-border-dark dark:bg-background-dark-secondary/50 dark:text-foreground-dark dark:hover:border-primary-400 dark:hover:bg-background-dark-muted dark:focus-visible:ring-offset-background-dark sm:w-auto"
+        <Button
+          onClick={() => scrollToSection("contact")}
+          size="lg"
+          aria-label={`${t("Hero.contactMe")} - ${t("Accessibility.navigateToContact")}`}
+          className="group relative flex min-h-[48px] w-full min-w-[160px] touch-manipulation items-center justify-center gap-2 overflow-hidden rounded-xl border border-neutral-300 bg-neutral-50 text-neutral-900 shadow-md backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:border-primary-600 hover:bg-white hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 dark:border-border-dark dark:bg-background-dark-secondary/50 dark:text-foreground-dark dark:hover:border-primary-400 dark:hover:bg-background-dark-muted dark:focus-visible:ring-offset-background-dark sm:w-auto"
         >
-          <Download
+          <Mail
             className="icon-sm transition-transform duration-300 group-hover:scale-110"
             aria-hidden="true"
           />
-          <span className="relative z-10">{t("Hero.downloadCV")}</span>
+          <span className="relative z-10">{t("Hero.contactMe")}</span>
           <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-        </a>
+        </Button>
       </div>
     </section>
   );

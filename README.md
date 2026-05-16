@@ -1,6 +1,7 @@
 # Portfolio v3
 
-![Portfolio Screenshot](/public/images/screenshot.png)
+![Portfolio Screenshot](/public/images/screenshot1.png)
+![Portfolio Screenshot](/public/images/screenshot2.png)
 
 A modern, responsive portfolio website built with Next.js 16, TypeScript, and Tailwind CSS. This portfolio showcases my work and skills with an interactive user interface.
 

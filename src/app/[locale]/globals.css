@@ -8,14 +8,14 @@
   }
 
   body {
-    @apply font-sans bg-neutral-50 text-neutral-900 md:text-base lg:text-lg leading-7;
+    @apply font-sans bg-neutral-50 dark:bg-background-dark text-neutral-900 md:text-base lg:text-lg leading-7;
     overflow-x: hidden;
     background-attachment: fixed;
   }
 
   @media (prefers-color-scheme: dark) {
     body {
-      @apply bg-white dark:bg-background-dark text-foreground-dark-secondary;
+      @apply bg-neutral-50 dark:bg-background-dark text-foreground-dark-secondary;
     }
   }
 
